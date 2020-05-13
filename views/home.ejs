@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>MC Movies</title>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+
+      <!-- vincular HTML a CSS --> 
+      <link rel="stylesheet" href="css/navbar.css">
+      <link rel="stylesheet" href="css/home.css">
+      <link rel="stylesheet" href="css/uikit-rtl.css">
+      <link rel="stylesheet" href="css/uikit-rtl.min.css">
+      <link rel="stylesheet" href="css/uikit.css">
+      <link rel="stylesheet" href="css/uikit.min.css">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+  </head>
+
+  <body>
+    <%- include('header') -%> 
+      <div class="access-allowed">
+          <header>
+              <nav>
+                  <ul class="ul-menu">
+                      <li id="li-logo">
+                        <img src="img/abstractlogo.png" alt="">
+                      </li>
+                      <li class="li-menu">
+                        <a  class="color-black" href="home.html">Home</a>
+                      </li>
+                      <li class="li-menu" id="contenedor"><a class="color-black" ></a>
+                        <a class="dropdown-content" href="generos.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Genres
+                        </a>
+                        <div class="dropdown-menu lista-generos" id="desplegable" aria-labelledby="navbarDropdown">
+                        </div>
+                      </li>
+                      <li class="li-menu"><a class="color-black" href="#products"></a>
+                        <a  href="favoritas.html">Favorites</a>
+                      </li>
+                      <li>
+                        <div class="uk-margin">
+                            <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
+                                <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
+                                <input class="uk-search-input" type="search" name="query" placeholder="Search...">
+                            </form>
+                        </div>
+                      </li>
+                      <span id="nombre-de-usuario">
+                      </span>
+                      <li class="li-login"><a class="color-black" href="#products"></a>
+                        <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
+                        <div id="modal-overflow" uk-modal>
+                              <div class="uk-modal-dialog">
+                                  <button class="uk-modal-close-default" type="button" uk-close></button>
+                                  <div class="uk-modal-body" uk-overflow-auto>
+                                    <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
+                                      <div class="uk-margin-large-top">
+                                        <div class="uk-inline">
+                                          <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                          <input id="nombre" class="uk-input" type="text">
+                                        </div>
+                                      </div>
+                                      <div class="uk-margin">
+                                        <div class="uk-inline">
+                                         <select class="gender" name="">
+                                           <option value="f">female</option>
+                                           <option value="m">male</option>
+                                           <option value="o">other</option>
+                                         </select>
+                                        </div>
+                                      </div>
+                                      <div class="uk-margin">
+                                           <div class="uk-inline">
+                                               <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                               <input class="uk-input" id="mail" type="text">
+                                           </div>
+                                       </div>
+                                       <div class="uk-margin">
+                                         <div class="uk-inline">
+                                           <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                           <input class="uk-input" id="contraseña" type="password">
+                                         </div>
+                                       </div>
+                                       <div class="uk-modal-footer uk-text-right">
+                                           <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                           <button class="uk-button uk-button-primary" type="submit">Save</button>
+                                       </div>
+                                    </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </nav>
+          </header>
+          <main>
+            <section id="puntaje" class="section-puntaje">
+              <h5 class="mejor-puntaje">Top Rated!</h5>
+              <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+                <ul class="uk-slideshow-items ul-puntaje">
+                </ul>
+                <div class="uk-light">
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            </section>
+            <section id="populares" class="section-populares">
+              <h5 class="pelis-populares">Popular Movies!</h5>
+              <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio:2:3">
+                <ul class="uk-slideshow-items ul-popular">
+                </ul>
+                <div class="uk-light">
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            </section>
+            <section id="proximamente" class="section-proximamente">
+                <h5 class="proximas-pelis">Upcoming!</h5>
+              <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio:2:3">
+                    <ul class="uk-slideshow-items ul-proximas">
+                    </ul>
+                <div class="uk-light">
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            </section>
+            <!-- HACER INCLUDE CON FOOTER -->
+            <%- include('footer') %> 
+          </main>
+      </div>
+  </body>
+</html>
+<!-- vincular HTML a javascript -->
+<script type="text/javascript" src="js/ukit-icons.js"></script>
+<script type="text/javascript" src="js/ukit-icons.min.js"></script>
+<script type="text/javascript" src="js/ukit.js"></script>
+<script type="text/javascript" src="js/ukit.min.js"></script>
+<script type="text/javascript" src="js/listageneros.js"></script>
+<script type="text/javascript" src="js/generos.js"></script>
+<script type="text/javascript" src="js/buscador.js"></script>
+<script type="text/javascript" src="js/favoritas.js"></script>
+<script type="text/javascript" src="js/popular.js"></script>
+<script type="text/javascript" src="js/proximas.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/mejorpuntuadas.js"></script>
+<script type="text/javascript" src="js/detallepeli.js"></script>
