@@ -7,82 +7,99 @@
     <link rel="stylesheet" href="/stylesheets/navbar.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="ul-menu">
-                <li id="li-logo">
-                  <img src="/images/abstractlogo.png" alt="">
-                </li>
-                <li class="li-menu">
-                  <a  class="color-black" href="home.html">Home</a>
-                </li>
-                <li class="li-menu" id="contenedor"><a class="color-black" ></a>
-                  <a class="dropdown-content" href="generos.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Genres
-                  </a>
-                  <div class="dropdown-menu lista-generos" id="desplegable" aria-labelledby="navbarDropdown">
-                  </div>
-                </li>
-                <li class="li-menu"><a class="color-black" href="#products"></a>
-                  <a  href="favoritas.html">Favorites</a>
-                </li>
-                <li>
-                  <div class="uk-margin">
-                      <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
-                          <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
-                          <input class="uk-search-input" type="search" name="query" placeholder="Search...">
-                      </form>
-                  </div>
-                </li>
-                <span id="nombre-de-usuario">
-                </span>
-                <li class="li-login"><a class="color-black" href="#products"></a>
-                  <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
-                  <div id="modal-overflow" uk-modal>
-                        <div class="uk-modal-dialog">
-                            <button class="uk-modal-close-default" type="button" uk-close></button>
-                            <div class="uk-modal-body" uk-overflow-auto>
-                              <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
-                                <div class="uk-margin-large-top">
-                                  <div class="uk-inline">
-                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                    <input id="nombre" class="uk-input" type="text">
-                                  </div>
-                                </div>
-                                <div class="uk-margin">
-                                  <div class="uk-inline">
-                                   <select class="gender" name="">
-                                     <option value="f">female</option>
-                                     <option value="m">male</option>
-                                     <option value="o">other</option>
-                                   </select>
-                                  </div>
-                                </div>
-                                <div class="uk-margin">
-                                     <div class="uk-inline">
-                                         <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
-                                         <input class="uk-input" id="mail" type="text">
-                                     </div>
-                                 </div>
-                                 <div class="uk-margin">
-                                   <div class="uk-inline">
-                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                     <input class="uk-input" id="contraseña" type="password">
-                                   </div>
-                                 </div>
-                                 <div class="uk-modal-footer uk-text-right">
-                                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                     <button class="uk-button uk-button-primary" type="submit">Save</button>
-                                 </div>
-                              </form>
+  <header>
+    <nav>
+        <ul class="ul-menu">
+          <!-- hicimos una lista con elementos de lista para hacer una barra de navegacion que nos permita acceder a todas las páginas mediante hipervínculos (a), href. Esto me indica a dónde quiero que el usuario llegue una vez que haga click en el elemento li.
+          Géneros es una lista desplegable obtenida de la librería uikit. role="button" indica cuál es el rol de esa lista
+          El logo de la pagina lo hicimos pensando en la geometria y simplicidad que queriamos brindarle al sitio.
+          Luego aplicamos tres hipervínculos de los cuales uno tiene un dropdown desplegable, un buscador y un boton para logearse -->
+            <li id="li-logo">
+              <img src="img/abstractlogo.png" alt="">
+            </li>
+            <li class="li-menu">
+              <a  class="color-black" href="home.html">Home</a>
+            </li>
+            <li class="li-menu" id="contenedor"><a class="color-black" ></a>
+              <a class="dropdown-content" href="generos.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Genres
+              </a>
+              <div class="dropdown-menu lista-generos" id="desplegable" aria-labelledby="navbarDropdown">
+              </div>
+            </li>
+            <li class="li-menu"><a class="color-black" href="#products"></a>
+              <a  href="favoritas.html">Favorites</a>
+            </li>
+            <li>
+              <div class="uk-margin">
+                <!-- Para hacer el buscador necesitabamos un form.
+                Elegimos uno de uikit por una cuestión de estilo.
+                Con action=buscador.html indicamos a qué pagina se deben enviar los datos del formulario cuando se envía el formulario a ese url (ruta relativa:buscador.html).
+                Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
+                Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
+               Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
+                  <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
+                      <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
+                      <input class="uk-search-input" type="search" name="query" placeholder="Search...">
+                  </form>
+              </div>
+            </li>
+            <!-- Obtener un modal de uikit para que aparezca un cartel cuando el usuario haga click en un botóna
+            El botón de login tiene que ir adentro del li y tiene que ir en el nav, el div obtenido del
+            uikit con el form, los iconos y demas tiene que ir afuera del li  -->
+            <span id="nombre-de-usuario">
+              <!-- Este span vacío tiene la función de agregar aquí el nombre del usuario una vez que este se haya logueado -->
+            </span>
+            <!-- Obtuvimos un modal de uikit para que aparezca un cartel cuando el usuario haga click en el botón login.
+            El botón de login tiene que ir adentro del li-login y en el nav, por fuera del div que contiene el form.-->
+            <li class="li-login"><a class="color-black" href="#products"></a>
+              <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
+              <div id="modal-overflow" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <div class="uk-modal-body" uk-overflow-auto>
+                          <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
+                            <div class="uk-margin-large-top">
+                              <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input id="nombre" class="uk-input" type="text">
+                              </div>
                             </div>
+                            <div class="uk-margin">
+                              <div class="uk-inline">
+                               <select class="gender" name="">
+                                 <option value="f">female</option>
+                                 <option value="m">male</option>
+                                 <option value="o">other</option>
+                               </select>
+                              </div>
+                            </div>
+                            <div class="uk-margin">
+                                 <div class="uk-inline">
+                                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                     <input class="uk-input" id="mail" type="text">
+                                 </div>
+                             </div>
+                             <div class="uk-margin">
+                               <div class="uk-inline">
+                                 <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                                 <input class="uk-input" id="contraseña" type="password">
+                               </div>
+                             </div>
+                             <div class="uk-modal-footer uk-text-right">
+                               <!-- El div tiene que venir aca para que sea parte del formulario y funcione el submit -->
+                                 <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                 <!-- Formularios: onsubmit: El boton que dice save tiene que ser de tipo submit para que guarde la información del login -->
+                                 <button class="uk-button uk-button-primary" type="submit">Save</button>
+                             </div>
+                          </form>
                         </div>
                     </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                </div>
+            </li>
+        </ul>
+    </nav>
+  </header>
 </body>
 </html>
 <script> src="/javascripts/login.js" </script>
-<script> src="/javascripts/buscador.js" </script>

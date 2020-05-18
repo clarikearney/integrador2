@@ -6,10 +6,31 @@
 </head>
 
 <body>
-    <header>
-        <%- include(./partials/header) %> 
-    </header>
+    <div class="access-allowed">
+        <header>
+            <%- include(./partials/header) %> 
+        </header>
 
+        <main>
+                        <section>
+                          <div class="uk-position-relative uk-visible-toggle clase-peli" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+                            <!-- Una clase agregada (obtenida de uikit) "animation: push;ratio: 2:3" porque esa es la forma de controlar las proporciones al decidir trabajar con uikit.
+                            Esta decisión se mantuvo en home, buscador, géneros, etc. por una cuestión de coherencia en el estilo -->
+                            <ul class="uk-slideshow-items pelis-genero">
+                              <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
+                            </ul>
+                            <div class="uk-light">
+                              <!-- Hipervínculo para regresar a la película anterior -->
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                                <!-- Hipervínculo para pasar a la siguiente película -->
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                            </div>
+                        </div>
+                        </section>
+            
+                    </main>
+
+    </div>
     <footer>
         <%- include(./partials/footer) %> 
     </footer>

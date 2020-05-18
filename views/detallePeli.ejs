@@ -5,10 +5,47 @@
     <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
 </head>
     <body>
+        <div class="access-allowed">
         <header>
             <%- include(./partials/header) %> 
         </header>
-    
+       
+            <main>
+              <section>
+                <div class="detalle-peli">
+                   <span>
+      
+                   </span>
+                </div>
+                <div class="trailer">
+                 <!-- para insertar el trailer utilizamos un div aparte -->
+                <iframe  class="trailer-peli" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <span>
+                  <!-- el btn onclick nos permite seleccionar la pelicula como favorita -->
+                     <button onclick='agregarFavoritos(" + id + ")' class='estrellita '>&#9733; FAVORITA &#9733; </button>
+                </span>
+                </div>
+              </section>
+              <section>
+      
+              </section>
+              <section>
+             <div class="recom">
+                     <h4> Peliculas Recomendadas </h4>
+                   <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+                     <ul class="uk-slideshow-items recomendaciones">
+                       <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
+                     </ul>
+                     <div class="uk-light">
+                       <!-- Hipervínculo para pasar a la siguiente película -->
+                         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                         <!-- Hipervínculo para regresar a la película anterior -->
+                         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                     </div>
+              </section>
+            </main>
+       
+        </div>
         <footer>
             <%- include(./partials/footer) %> 
         </footer>

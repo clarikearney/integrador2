@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-  include(./partials/head) %> 
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="access-allowed">
+            <header>
+                <%- include(./partials/header) %> 
+            </header>
+    
+                <main>
+                    <section id="buscador" class="section-buscador">
+                        <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
+                            <ul class="uk-slideshow-items detalle" >
+                            <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
+                            </ul>
+                            <div class="uk-light">
+                                <!-- Hipervínculo para pasar a la siguiente película -->
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                                <!-- Hipervínculo para regresar a la película anterior -->
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+    </div>
+    <footer>
+        <%- include(./partials/footer) %> 
+    </footer>
+</body>
+</html>
+<script> src="/javascripts/buscador.js" </script>
+
+
+
+  
