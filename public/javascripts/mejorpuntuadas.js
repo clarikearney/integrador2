@@ -13,8 +13,6 @@ window.addEventListener("load", function() {
         console.log("puntaje");
         console.log(informacion.results);
 
-
-
         // var arrayDePeliculas almacena TODA la información obtenida
         var arrayDePeliculas = informacion.results
         console.log(arrayDePeliculas);
