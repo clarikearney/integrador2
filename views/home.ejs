@@ -2,15 +2,24 @@
 <html lang="en" dir="ltr">
   
   <head>
-      <%-  include(./partials/head) %> 
-      <link rel="stylesheet" href="../public/stylesheets/home.css">
+      
+      <%-  include('./partials/head') %> 
+      <link rel="stylesheet" href="/stylesheets/home.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
+
+      <script src="/javascripts/mejorpuntuadas.js"></script> 
+      <script src="/javascripts/popular.js"></script> 
+      <script src="/javascripts/proximas.js" ></script>
+      <script src="/javascripts/uikit.min.js" ></script>
+      <script src="/javascripts/uikit-icons.min.js" ></script>
+
   </head>
 
   <body>
       <div class="access-allowed">
-      <header>
-        <%- include(./partials/header) %> 
-      </header>
+
+        <%- include('./partials/header') %> 
+    
 
           <main>
             
@@ -55,9 +64,6 @@
       </div>
       <%- include('./partials/footer') %> 
   </body>
+  
 </html>
 <!-- vincular HTML a javascript -->
-
-<script> src="../public/javascripts/mejorpuntuadas.js" </script>
-<script> src="../public/javascripts/popular.js" </script>
-<script> src="../public/javascripts/proximas.js" </script>
