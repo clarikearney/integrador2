@@ -6,6 +6,7 @@ router.get('/detalle', controller.detail)
 router.get('/', controller.home)
 router.get('/generos', controller.genres)
 router.get('/favoritas', controller.favorite)
+router.get('/home', controller.home)
 
 
 module.exports = router;

@@ -37,7 +37,7 @@ window.addEventListener("load",function() {
         // += agrega un valor a la variable
   
         li += '<li>'
-        li += "<a href='detalle?idDePelicula=" + pelicula.id + "'>"
+        li += "<a href='favoritas?idDePelicula=" + pelicula.id + "'>"
         li += '<p>' + pelicula.title + '</p>'
         li += '<img src=' + imgPath + pelicula.poster_path + '>'
         li += '</a>'
