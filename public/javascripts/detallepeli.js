@@ -6,21 +6,6 @@ window.addEventListener("load", function() {
     var imgPath = "https://image.tmdb.org/t/p/original"
     var idDePelicula = new URLSearchParams(window.location.search).get("idDePelicula")
   
-   // INICIO BLOQUE 1 - Leer el array de storage
-  
-     // Paso 1 - Leo de localStorage
-     // Web Storage: Almacenar información en el navegador del usuario (almacena en el cliente)
-     // Hay dos métodos, localStorage o sessionStorage
-     // localStorage guarda info sin tiempo de expiración y almacena strings
-     // sessionStorage guarda información mientras se mantenga abierto el navegador
-  
-           // local storage es una caja, adentro guardo valores para que los pueda identificar
-           // métodos de localStorage
-           // getItem(): obtiene valores del objeto localStorage que tienen que tener un nombre o key asociada ("nombre",nombre)
-  
-           // la función que aparece abajo de todo dice que cada vez que el
-           // usuario se loguea, tiene que borrarse el botón y agregar el nombre, eso implica que cuando se recarga la página se borra la información cargada por el usuario(cuando pasas de la home a la página de favoritos, por ejemplo, se borra la información del login). Por esta razón lo primero que tiene que aparecer en login.js es if (localStorage.getItem("nombre") != null) para que cada vez que no haya nada escrito en los campos del formulario, tienen que llenarse los mismos con la información almacenada en localStorage (ejecutarse la función)
-  
      var jsonFavoritas = localStorage.getItem("peliculasFavoritas")
   
   // si json me dice que no tiene favoritas (== indica igualdad)
