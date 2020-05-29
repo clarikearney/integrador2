@@ -6,7 +6,7 @@ router.get('/home', controller.home);
 router.get('/detalle', controller.detail);
 router.get('/generos', controller.genres);
 router.get('/favoritas', controller.favorite);
-router.get('/review', controller.storeReview);
+router.get('/review', controller.movieReview);
 
 module.exports = router;
 

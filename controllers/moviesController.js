@@ -13,13 +13,15 @@ favorite: function (req, res) {
     res.render('favoritas')
 },
 
-storeReview: function (req, res) {
+movieReview: function (req, res) {
 
     let Review = {
-        email: req.body.email,
-        text: req.body.comment,
-        rating: req.body.rating,
-        id_movie: req.body.movie
+        // email: req.body.email,
+        resena: req.body.resena,
+        puntaje: req.body.puntaje,
+        pelicula_id: req.body.pelicula_id,
+        created_at: req.body.created_at,
+        updated_at: req.body.updated_at
     }
     db.Review.findAll(
             {
@@ -30,7 +32,7 @@ storeReview: function (req, res) {
             {association: "User"}
         })
         .then(User => {
-            return res.render("detalleUsuario", {
+            return res.render("detallePeli", {
                 User: User
             })
         })

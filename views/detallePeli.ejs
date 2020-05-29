@@ -44,6 +44,26 @@
                          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                      </div>
               </section>
+
+              <section>
+                <h1>Reviews</h1>
+                <ul>
+                    <% for (let i = 0; i < generos.length; i++) { %>
+                        <li>
+                            <a href="/movies/review<%=generos[i].id%>">
+                                <%=generos[i].name%>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+              </section>
+
+              <!-- <section>
+                <form action="/movies/create/<%=unaPelicula.id%>" method="POST">
+                  <input type="submit" value="Create">
+                </form>
+              </section> -->
+
             </main>
        
         </div>
