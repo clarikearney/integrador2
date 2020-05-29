@@ -2,9 +2,9 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "usuarios",
+    "database": "baseDatos",
     "host": "127.0.0.1",
-    "port": 8889,
+    "port": 80,
     "dialect": "mysql",
     "operatorsAliases": false
   },

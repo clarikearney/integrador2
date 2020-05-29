@@ -6,36 +6,39 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        movie_id: {
+        pelicula_id: {
             type: DataTypes.INTEGER(10),
         },
-        user_id: {
+        usuario_id: {
             type: DataTypes.INTEGER(10)
         },
-        reviewText: {
+        resena: {
             type: DataTypes.STRING(45)
         },
-        created_at: {
+        created_At: {
             type: DataTypes.DATE
         },
-        updated_at: {
+        updated_At: {
             type: DataTypes
         },
-        rating: {
+        puntaje: {
             type: DataTypes.DOUBLE
         }
     };
 
     let config = {
-        tableName: "T-reviews",
+        tableName: "resenas",
         underscored: true, 
         timestamps: true
     };
 
     const Review = sequelize.define("Review", cols, config);
 
-    Review.associate = function(modelos) {
-
+    Review.associate = function(models) {
+        Review.belongsTo(models.User, {
+            as: "User",
+            foreignKey: "usuario_id:"
+        });
     }
 
     return Review;

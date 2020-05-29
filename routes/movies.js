@@ -8,3 +8,4 @@ router.get('/generos', controller.genres);
 router.get('/favoritas', controller.favorite);
 
 module.exports = router;
+
