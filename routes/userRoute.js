@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let userController = require("../controllers/userController");
+let userController = require("../controllers/registerController");
 
 // router.get("/register", userController.registerUser);
 // router.post("/register", userController.storeUser);

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": null,
     "database": "baseDatos",
     "host": "127.0.0.1",
     "port": 80,

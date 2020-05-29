@@ -21,7 +21,6 @@ storeReview: function (req, res) {
         rating: req.body.rating,
         id_movie: req.body.movie
     }
-    
     db.Review.findAll(
             {
                 where: {
@@ -39,8 +38,7 @@ storeReview: function (req, res) {
             return res.send("error" + error)
         });
 
-
-}
+    }
 
 }
 
