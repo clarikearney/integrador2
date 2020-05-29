@@ -44,5 +44,4 @@ storeReview: function (req, res) {
 
 }
 
-}
 module.exports = moviesController;
