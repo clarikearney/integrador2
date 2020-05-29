@@ -1,49 +1,33 @@
-let db = require("../database/models/index");
+// let db = require("../database/models");
 
-let bcrypt = require("bcryptjs");
+// let bcrypt = require("bcryptjs");
 
-let userController = {
+// let userController = {
 
-    // register: function(req, res) {
-    //     res.render("register");
-    // },
-    // store: function(req, res) {
-    //     let User = {
-    //         name: req.body.name,
-    //         email: req.body.email,
-    //         password: bcrypt.hashSync(req.body.password, 10),
-    //         birth_date: req.body.birthday
-    //     }
+//     // registro usuario 
+//     registerUser: function(req, res) {
+//         res.render("register");
+//     },
+//     // almacenar usuario
+//     storeUser: function(req, res) {
+        
+//         let User = {
+//             name: req.body.name,
+//             email: req.body.email,
+//             password: bcrypt.hashSync(req.body.password, 10),
+//             birth_date: req.body.birth_date
+//         }
 
-    //     db.User.create(User)
-    //     .then(() => {
-    //         res.send("Usuario creado")
-    //     })
-    // }
+//         // creo usuario
+//         db.User.create(User)
+//         .then(() => {
+//             res.send("Usuario creado")
+//         })
+//     },
 
+//     login: function(req, res) {
+//         res.render('login')
+//     }
+// }
 
-    // reseña del usuario
-    reseñaDetalle: (req, res) => {
-        console.log(req.params.id)
-        db.User
-        .findAll(
-            {
-                where: {
-                    id: req.params.id
-                },
-            include: 
-            {association: "resenas"}
-        })
-        .then(User => {
-            return res.render("detalleUsuario", {
-                User: User
-            })
-        })
-        .catch(error => {
-            return res.send("error" + error)
-        });
-
-    }
-}
-
-module.exports = userController;
+// module.exports = userController;
