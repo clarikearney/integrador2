@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         resena: {
             type: DataTypes.STRING(45)
         },
-        created_At: {
+        createdAt: {
             type: DataTypes.DATE
         },
-        updated_At: {
+        updatedAt: {
             type: DataTypes
         },
         puntaje: {

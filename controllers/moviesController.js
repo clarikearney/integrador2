@@ -1,3 +1,7 @@
+// SI NO ESTA COMENTADO ROMPE
+// let db = require('../database/models');
+// let infoUser = require('../controllers/registerController');
+
 let moviesController = {
 
 home: function (req, res) {
@@ -15,14 +19,6 @@ favorite: function (req, res) {
 
 movieReview: function (req, res) {
 
-    let Review = {
-        // email: req.body.email,
-        resena: req.body.resena,
-        puntaje: req.body.puntaje,
-        pelicula_id: req.body.pelicula_id,
-        created_at: req.body.created_at,
-        updated_at: req.body.updated_at
-    }
     db.Review.findAll(
             {
                 where: {
@@ -33,7 +29,7 @@ movieReview: function (req, res) {
         })
         .then(User => {
             return res.render("detallePeli", {
-                User: User
+                unUser: User
             })
         })
         .catch(error => {
