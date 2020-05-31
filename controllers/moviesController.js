@@ -19,13 +19,12 @@ favorite: function (req, res) {
 
 movieReview: function (req, res) {
 
-    db.Review.findAll(
-            {
+    db.Review.findAll({
                 where: {
                     usuario_id: req.params.id
                 },
             include: 
-            {association: "User"}
+            [{association: "User"}]
         })
         .then(User => {
             return res.render("detallePeli", {

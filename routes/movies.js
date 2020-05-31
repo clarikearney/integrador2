@@ -7,7 +7,7 @@ router.get('/home', controller.home);
 router.get('/detalle', controller.detail);
 router.get('/generos', controller.genres);
 router.get('/favoritas', controller.favorite);
-router.get('/review', controller.movieReview);
+router.get('/reviews', controller.movieReview);
 
 // router.get("/register", userController.registerUser);
 // router.post("/register", userController.storeUser);

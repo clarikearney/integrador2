@@ -2,18 +2,18 @@
 
 // let moduloLogin = {
 //     chequearUsuario: function (email) {
-//         return db.Usuario.findOne({
+//         return db.User.findOne({
 //             where: {
 //                 email: email
 //             }
 //         })
 //         .then(function(usuario) {
-//             return usuario != null;
+//             return User != null;
 //         })
 //     },
 
 //     buscarPorEmail: function (email){
-//         return db.Usuario.findOne({
+//         return db.User.findOne({
 //             where: {
 //                 email:email
 //             }
@@ -24,7 +24,7 @@
 //     },
 
 //     validar: function (email, pass) {
-//         return db.Usuario.findOne({
+//         return db.User.findOne({
 //             where:{
 //                 email:email,
 //                 password: pass
