@@ -37,7 +37,13 @@ storeReview: function (req, res){
 },
 // LECTURA
 // allReviews: function (req, res) {
-//     db.Review.findAll()
+//     db.Review.findAll({
+//             where: {
+//                     usuario_id: req.params.id
+//              },
+//             include: 
+//             [{association: "Reviews"}]
+//         })
 //     .then(function(Reviews) {
 //         res.render('allReviews', {Reviews:Reviews})
 //     })
