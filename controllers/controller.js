@@ -1,5 +1,5 @@
 // SI NO ESTA COMENTADO ROMPE
-// let db = require('../database/models');
+let db = require('../database/models');
 
 let controller = {
 
@@ -14,44 +14,26 @@ genres: function (req, res) {
 },
 favorite: function (req, res) {
     res.render('favoritas')
-}
-
-// userReviews: function (req, res) {
-
-//     db.User.findAll({
-//                 where: {
-//                     usuario_id: req.params.id
-//                 },
-//             include: 
-//             [{association: "Reviews"}]
-//         })
-//         .then(oneUser => {
-//             return res.render("detallePeli", {
-//                 oneUser: oneUser
-//             })
-//         })
-//         .catch(error => {
-//             return res.send("error" + error)
-//         });
-//     },
+},
 
 // CREACIÓN
-// createReview: function (req, res) {
-//     db.Review.findAll()
-//         .then(function(Users) {
-//             return res.render('createReview', {oneUser:oneUser})
-//         })
-//         .catch(error => {
-//             return res.send("error" + error)
-//         });
-// }
-// storeReview: function (req, res){}
-//     db.User.create({
-//         name: req.body
-//         TextDecoderStreamd
-//         await
-//         aa
-//     }),
+createReview: function (req, res) {
+    db.Review.findAll()
+        .then(function(Users) {
+            return res.render('createReview', {oneUser:oneUser})
+        })
+        .catch(error => {
+            return res.send("error" + error)
+        });
+},
+storeReview: function (req, res){}
+    db.User.create({
+        name: req.body.name,
+        email: req.body.email,
+        createdAt: req.body.createdAt,
+        puntaje: req.body.puntaje,
+        resena: req.body.resena
+    }),
 
 // LECTURA
 // allReviews: function (req, res) {
