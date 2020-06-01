@@ -33,11 +33,17 @@ storeReview: function (req, res){
         createdAt: req.body.createdAt,
         puntaje: req.body.puntaje,
         resena: req.body.resena
-    }),
-
+    })
+},
 // LECTURA
 // allReviews: function (req, res) {
-//     db.Review.findAll()
+//     db.Review.findAll({
+//             where: {
+//                     usuario_id: req.params.id
+//              },
+//             include: 
+//             [{association: "Reviews"}]
+//         })
 //     .then(function(Reviews) {
 //         res.render('allReviews', {Reviews:Reviews})
 //     })
@@ -73,7 +79,7 @@ storeReview: function (req, res){
 // where: {id: req.params.id}
 // });
 // res.redirect('/movie/' + req.params.detalle)
-// }
+// },
 
 // deleteReview: function(req, res) {
 //     db.User.destroy({
@@ -84,6 +90,12 @@ storeReview: function (req, res){
 //     res.redirect('/movies')
 // }
 
+<<<<<<< HEAD
 //};
 
+=======
+}
+>>>>>>> master
 module.exports = controller;
+
+
