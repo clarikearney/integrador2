@@ -84,6 +84,6 @@ storeReview: function (req, res){
 //     res.redirect('/movies')
 // }
 
-}
+//};
 
 module.exports = controller;
