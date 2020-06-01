@@ -33,8 +33,8 @@ storeReview: function (req, res){
         createdAt: req.body.createdAt,
         puntaje: req.body.puntaje,
         resena: req.body.resena
-    }),
-
+    })
+},
 // LECTURA
 // allReviews: function (req, res) {
 //     db.Review.findAll()
@@ -73,7 +73,7 @@ storeReview: function (req, res){
 // where: {id: req.params.id}
 // });
 // res.redirect('/movie/' + req.params.detalle)
-// }
+// },
 
 // deleteReview: function(req, res) {
 //     db.User.destroy({
@@ -85,5 +85,6 @@ storeReview: function (req, res){
 // }
 
 }
-
 module.exports = controller;
+
+
