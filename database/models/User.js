@@ -23,19 +23,19 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {
         tableName: "usuarios",
-        underscored: true, 
-        timestamps: true
+        // underscored: true, 
+        timestamps: false
     }
 
     const User = sequelize.define("User", cols, config);
 
-    User.associate = function(models) {
+    /*User.associate = function(models) {
         // un usuario tiene muchas reseñas asociadas
         User.hasMany(models.Review, {
             as: "Reviews",
             foreignKey: "usuario_id"
         })
-    }
+    }*/
 
     return User;
 

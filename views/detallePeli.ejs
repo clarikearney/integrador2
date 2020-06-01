@@ -45,49 +45,22 @@
                      </div>
               </section>
 
-              <section>
-                <h1>Reviews</h1>
-                <ul>
-                    <% for (let i = 0; i < Reviews.length; i++) { %>
-                        <li>
-                            <a href="/movies/review<%=oneUser[i].id%>">
-                                <%=oneUser[i].name%>
-                            </a>
-                        </li>
-                    <% } %>
-                </ul>
-              </section>
-
-
-
-						<ul>
-                <li>
+              <% if (reviews.length > 0) { %>
+                <section>
+                  <h1>Reviews</h1>
                   <ul>
-                    <% for(let i = 0; i < Reviews.length; i++) { %> 
-                      <li>
-                        <%= Reviews[i].name %> 
-                        <%= Reviews[i].resena %> 
-                        <%= Reviews[i].createdAt %> 
-                      </li>
-                    <% } %> 
+                      <% for (let i = 0; i < reviews.length; i++) { %>
+                          <li>
+                            <%= reviews[i].name %> <br>
+                            <%= reviews[i].resena %> <br>
+                            <%= reviews[i].createdAt %> <br>
+                            <%=reviews[i].oneUser.name%> <br>
+                          </li>
+                      <% } %>
                   </ul>
-                </li>
-
-                 <a href="/movies/create/<%= Reviews.id %> ">
-                  <button>Create review</button>
-								</a>
-
-                <a href="/movies/edit/<%= Reviews.id %> ">
-                  <button>Edit review</button>
-                </a>
-
-								<form action="/movies/delete/<%= Review.id %> " method="POST">
-								    <div>
-								        <button type="submit">Delete</button>
-								    </div>
-								</form>
-                
-              </ul>
+                </section>
+              <% } %>
+              
             </main>
        
         </div>

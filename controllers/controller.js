@@ -7,7 +7,14 @@ home: function (req, res) {
     res.render('home')
 },
 detail: function (req, res) {
-    res.render('detallePeli')
+    db.Review.findAll({
+        include: ['oneUser']
+    }) 
+    .then(reviews => {
+       // return res.send(reviews);
+        return res.render('detallePeli', { reviews });
+    })
+    
 },
 genres: function (req, res) {
     res.render('generos')
@@ -18,6 +25,7 @@ favorite: function (req, res) {
 
 // CREACIÓN
 createReview: function (req, res) {
+    // return res.send('estoy aquí')
     db.Review.findAll()
         .then(function(Users) {
             return res.render('createReview', {oneUser:oneUser})
@@ -90,12 +98,9 @@ storeReview: function (req, res){
 //     res.redirect('/movies')
 // }
 
-<<<<<<< HEAD
-//};
 
-=======
-}
->>>>>>> master
+};
+
 module.exports = controller;
 
 

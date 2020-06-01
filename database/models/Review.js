@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {
         tableName: "resenas",
-        underscored: true, 
+        // underscored: true, 
         timestamps: true
     }
 
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
         // una reseña esta asociada a un solo usuario
         Review.belongsTo(models.User, {
             as: "oneUser",
-            foreignKey: "usuario_id:"
+            foreignKey: "usuario_id"
         })
     }
 
