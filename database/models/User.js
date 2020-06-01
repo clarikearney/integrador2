@@ -19,21 +19,22 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING(45)
         }
-    };
+    }
 
     let config = {
         tableName: "usuarios",
         underscored: true, 
         timestamps: true
-    };
+    }
 
     const User = sequelize.define("User", cols, config);
 
     User.associate = function(models) {
+        // un usuario tiene muchas reseñas asociadas
         User.hasMany(models.Review, {
-            as: "Review",
+            as: "Reviews",
             foreignKey: "usuario_id"
-        });
+        })
     }
 
     return User;

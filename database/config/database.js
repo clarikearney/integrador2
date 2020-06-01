@@ -1,4 +1,4 @@
-{
+module.exports = {
   "development": {
     "username": "root",
     "password": "1234",
@@ -24,4 +24,5 @@
     "dialect": "mysql",
     "operatorsAliases": false
   }
+
 }

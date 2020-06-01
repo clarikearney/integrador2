@@ -2,10 +2,10 @@
 <%- include('./partials/header') %>
 <body>
     <ul>
-        <% for(let i = 0; i < oneUser.length; i++) { %> 
+        <% for(let i = 0; i < Reviews.length; i++) { %> 
             <li>
-                <a href="/movies/<%= oneUser[i].id %> "></a>
-                <%= oneUser[i].name %> 
+                <a href="/movies/<%= Reviews[i].id %> "></a>
+                <%= Reviews[i].resena %> 
             </li>
         <% } %> 
     </ul>
