@@ -26,7 +26,7 @@ createReview: function (req, res) {
             return res.send("error" + error)
         });
 },
-storeReview: function (req, res){}
+storeReview: function (req, res){
     db.User.create({
         name: req.body.name,
         email: req.body.email,
@@ -87,4 +87,3 @@ storeReview: function (req, res){}
 }
 
 module.exports = controller;
-
