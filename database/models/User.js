@@ -29,13 +29,13 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define("User", cols, config);
 
-    /*User.associate = function(models) {
+    User.associate = function(models) {
         // un usuario tiene muchas reseñas asociadas
         User.hasMany(models.Review, {
             as: "Reviews",
             foreignKey: "usuario_id"
         })
-    }*/
+    }
 
     return User;
 

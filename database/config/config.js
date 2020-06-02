@@ -4,7 +4,6 @@ module.exports = {
     "password": null,
     "database": "baseDatos",
     "host": "127.0.0.1",
-    //"port": 80,
     "dialect": "mysql",
     "operatorsAliases": false
   },
