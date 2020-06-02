@@ -4,7 +4,8 @@ var usersController = require('../controllers/usersController');
 
 
 router.get('/searchUser', usersController.searchForm);
-// router.get('/searchUsersResult', usersController.searchUsersResult);
+router.get('/searchUsersResult', usersController.searchUsersResult);
+router.get('/detail:id', usersController.searchById);
 
 
 module.exports = router;

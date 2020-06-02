@@ -45,7 +45,7 @@
 
               <% if (reviews.length > 0) { %>
                 <section>
-                  <h1>Reviews</h1>
+                  <h3>Reviews</h3>
                   <ul>
                       <% for (let i = 0; i < reviews.length; i++) { %>
                           <li>
@@ -53,6 +53,7 @@
                             <%= reviews[i].resena %> <br>
                             <%= reviews[i].createdAt %> <br>
                             <%=reviews[i].oneUser.name%> <br>
+                            <hr>
                           </li>
                       <% } %>
                   </ul>

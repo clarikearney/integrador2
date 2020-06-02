@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-  include('./partials/head') %> 
+    <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
+<body>
+    <h3>Welcome to <%= oneUser.user %>'s profile</h3>
+    <ul>
+        <li>
+            email: <%= oneUser.email %>
+        </li>
+        <li>
+            birth_date: <%= oneUser.email %>
+        </li>
+    </ul>
+
+    <h2> <%= oneUser.user %>'s Reviews</h2>
+        <% if (reviews.length >0) { %>
+                <% for (let i=0; i< reviews.length; i++){ %>
+
+                <h4> review: <%= reviews[].pelicula_id %> </h4>
+                <p> <%= reviews[].resena %> </p>
+                <hr>
+        <% } %>    
+        <% } else { %> 
+            <p> We haven't found reviews </p>
+    <% } %>   
+</body>
+
+    <%- include('./partials/footer') %> 
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-  include('./partials/head') %> 
+    <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
+<body>      
+            <%- include('./partials/header') %>  
+        <h1>Search Results</h1> 
+        <% if(users.length >0) { %>
+            <% for (let i = 0; i < users.length;i++) {%>
+                <h3> <%= users[i].name %></h3>
+                <h4> email: <%= users[i].email %></h4>  
+                <hr> 
+            <% } %>
+        <% } else { %> 
+            <p>
+                Haven´t found any users with that name or email!
+            </p>
+            <% } %>
+            
+</body>
+            <%- include('./partials/footer') %> 
+
+</html>
