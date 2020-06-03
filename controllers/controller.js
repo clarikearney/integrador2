@@ -18,6 +18,9 @@ genres: function (req, res) {
 },
 favorite: function (req, res) {
     res.render('favoritas')
+},
+create: function (req, res) {
+    
 }
 
 };
