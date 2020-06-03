@@ -2,11 +2,14 @@
 <html lang="en">
     <%-  include('./partials/head') %> 
     <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
+          <link rel="stylesheet" href="/stylesheets/home.css">
+
     <body>
         
             <%- include('./partials/header') %> 
         
 <body>
+<section>
     <form action="/users/searchUsersResult" method="GET"> 
         <div>
             <label for=""> Search users </label>
@@ -17,6 +20,7 @@
             <input type="submit" value="Enviar">
         </div>
     </form>
+</section>
 </body>
             <%- include('./partials/footer') %> 
 

@@ -3,6 +3,7 @@
     <%-  include('./partials/head') %> 
     <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
 <body>
+<section>
     <h3>Welcome to <%= oneUser.user %>'s profile</h3>
     <ul>
         <li>
@@ -23,7 +24,8 @@
         <% } %>    
         <% } else { %> 
             <p> We haven't found reviews </p>
-    <% } %>   
+    <% } %>  
+</section> 
 </body>
 
     <%- include('./partials/footer') %> 
