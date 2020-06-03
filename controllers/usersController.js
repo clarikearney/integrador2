@@ -1,6 +1,6 @@
 let db = require("../database/models");
 let op = db.Sequelize.Op;
-// let bcrypt = require("bcryptjs");
+const bcrypt = require('bcrypt');
 
 let usersController = {
 

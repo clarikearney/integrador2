@@ -1,7 +1,6 @@
 let db = require('../database/models');
 let moduloLogin = require('../modulo-login');
-// let bcrypt = require("bcryptjs");
-
+const bcrypt = require('bcrypt');
 
 let controller = {
 
@@ -10,9 +9,6 @@ home: function (req, res) {
 },
 detail: function (req, res) {
     db.Review.findAll({
-        // where: {
-        //     pelicula_id: req.query.pelicula_id
-        // },
         include: ['oneUser']
     })
     .then(function(reviews) {
