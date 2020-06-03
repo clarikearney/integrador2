@@ -2,6 +2,7 @@
 <html lang="en">
     <%-  include('./partials/head') %> 
     <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
+    
     <script src="/javascripts/detallepeli.js" ></script>
     <body>
         <div class="access-allowed">
@@ -59,11 +60,10 @@
 
                   </ul>
                 </section>
-              <% } %>
-              
+              <% } %>              
           
                           <div class="uk-modal-body" uk-overflow-auto>
-                            <form action="/movies/createReview" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="post">
+                            <form action="/movies/createReview" class="uk-flex uk-flex-column uk-flex-middle" method="post">
                               <div class="uk-margin-large-top">
                                 <div class="uk-inline">
                                   <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">
@@ -71,14 +71,15 @@
                               </div>
                               <div class="uk-margin">
                                 <div class="uk-inline">
-                                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
+                                    <!-- <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span> -->
+                                    <label for="email">Email</label>
                                     <input class="uk-input" id="email" type="email" name="email">
                                 </div>
                             </div>
                                <div class="uk-margin">
                                  <div class="uk-inline">
-                                   <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                   <input class="uk-input" id="password" type="password" name="password">
+                                   <label for="password">Password</label>
+                                   <input class="uk-input" id="password" name="password">
                                  </div>
                                </div>
                                <div>

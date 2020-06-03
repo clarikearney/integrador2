@@ -1,4 +1,5 @@
 let db = require('../database/models');
+let moduloLogin = require('../modulo-login');
 
 let controller = {
 
@@ -7,10 +8,15 @@ home: function (req, res) {
 },
 detail: function (req, res) {
     db.Review.findAll({
+        // where: {
+        //     pelicula_id: req.query.pelicula_id
+        // },
         include: ['oneUser']
     })
     .then(function(reviews) {
-        return res.render('detallePeli', {reviews: reviews});
+        res.render('detallePeli', {
+            pelicula_id: req.query.pelicula_id,
+            reviews: reviews});
     })
 },
 genres: function (req, res) {
@@ -20,10 +26,26 @@ favorite: function (req, res) {
     res.render('favoritas')
 },
 create: function (req, res) {
-    
-}
+moduloLogin.validar(req.body.email, req.body.password)
+.then(function(usuario) {
+    if(usuario != undefined) {
+        db.Review.create({
+            pelicula_id: req.body.usuario_id,
+            usuario_id: user.id,
+            resena: req.body.resena,
+            puntaje: req.body.puntaje
+        })
+        .then(function() {
+            res.redirect('/movies/detalle/?pelicula_id' + req.body.pelicula_id);
+        })
+     }  else {
+            res.send('Error')
+        }
+    }
 
-};
+)}
+
+}; 
 
 module.exports = controller;
 

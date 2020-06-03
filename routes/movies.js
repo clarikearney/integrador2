@@ -8,7 +8,7 @@ router.get('/detalle', controller.detail);
 router.get('/generos', controller.genres);
 router.get('/favoritas', controller.favorite);
 
-router.post('/createReview', controller.create);
+router.post('/detalle', controller.create);
 
 module.exports = router;
 
