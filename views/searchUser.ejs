@@ -2,26 +2,33 @@
 <html lang="en">
     <%-  include('./partials/head') %> 
     <link rel="stylesheet" href="/stylesheets/detallepeli.css"> 
-          <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
 
-    <body>
         
-            <%- include('./partials/header') %> 
         
-<body>
-<section>
-    <form action="/users/searchUsersResult" method="GET"> 
-        <div>
-            <label for=""> Search users </label>
-            <input type="text" id="searchUser" name="searchUser">
-        </div>
-
-        <div>
-            <input type="submit" value="Enviar">
-        </div>
-    </form>
-</section>
+  <body>
+    <%- include('./partials/header') %> 
+    <section>
+        <div class="uk-modal-body" uk-overflow-auto>
+            <form action="/users/searchUsersResult" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
+              <div class="uk-margin-large-top">
+                <div class="uk-inline">
+                  <!-- <span class="uk-form-icon" uk-icon="icon: user"></span> -->
+                  <!-- <label for="">Search users</label> -->
+                  <input id="text" class="searchUser" type="searchUser" placeholder="Search users">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <div class="uk-inline">
+                    <input type="submit" value="Enviar">
+                </div>
+              </div>
+            </form>
+          </div>
+    </section>
+    <%- include('./partials/footer') %> 
 </body>
-            <%- include('./partials/footer') %> 
 
 </html>
+
+

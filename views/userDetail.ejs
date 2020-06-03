@@ -7,27 +7,25 @@
     <h3>Welcome to <%= oneUser.user %>'s profile</h3>
     <ul>
         <li>
-            email: <%= oneUser.email %>
+            Email: <%= oneUser.email %>
         </li>
         <li>
-            birth_date: <%= oneUser.email %>
+            Birth date: <%= oneUser.birth_date %>
         </li>
     </ul>
 
     <h2> <%= oneUser.user %>'s Reviews</h2>
-        <% if (reviews.length >0) { %>
-                <% for (let i=0; i< reviews.length; i++){ %>
+    <% if (Reviews.length >0) { %>
+                <% for (let i=0; i< users.length; i++){ %>
 
-                <h4> review: <%= reviews[].pelicula_id %> </h4>
-                <p> <%= reviews[].resena %> </p>
+                <h4> review: <%= Reviews[].pelicula_id %> </h4>
+                <p> <%= Reviews[].resena %> </p>
                 <hr>
         <% } %>    
         <% } else { %> 
             <p> We haven't found reviews </p>
     <% } %>  
 </section> 
+<%- include('./partials/footer') %> 
 </body>
-
-    <%- include('./partials/footer') %> 
-
 </html>
