@@ -1,5 +1,7 @@
 let db = require('../database/models');
 let moduloLogin = require('../modulo-login');
+// let bcrypt = require("bcryptjs");
+
 
 let controller = {
 
@@ -26,6 +28,7 @@ favorite: function (req, res) {
     res.render('favoritas')
 },
 create: function (req, res) {
+    return res.send(req.body);
 moduloLogin.validar(req.body.email, req.body.password)
 .then(function(usuario) {
     if(usuario != undefined) {

@@ -8,10 +8,11 @@ let usersController = {
         res.render ("searchUser");
     },
     searchUsersResult: function (req,res){
+        //return res.send(req.query)
         db.User.findAll ({
             where:{
                 [op.or]: {
-                    email: {[op.like]: "%" + req.query.searchUser + "%"},
+                    name: {[op.like]: "%" + req.query.searchUser + "%"},
                     email: {[op.like]: "%" + req.query.searchUser + "%"}
                 }
             }
