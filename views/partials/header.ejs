@@ -27,25 +27,25 @@
               <img src="/images/abstractlogo.png" alt="">
             </li>
             <li class="li-menu">
-              <a  class="color-black" href="/movies/home">Home</a>
+              <a  class="color-black" href="/movies/home">HOME</a>
             </li>
             <li class="li-menu" id="contenedor"><a class="color-black" ></a>
               <a class="dropdown-content" href="/movies/generos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Genres
+                GENRES
               </a>
               <div class="dropdown-menu lista-generos" id="desplegable" aria-labelledby="navbarDropdown">
               </div>
             </li>
             <li class="li-menu"><a class="color-black" href="#products"></a>
-              <a  href="/movies/favoritas">Favorites</a>
+              <a  href="/movies/favoritas">FAVORITES</a>
             </li>
 
             <li class="li-menu">
-              <a href="/movies/reviews">Reviews</a>
+              <a href="/movies/reviews">MY REVIEWS</a>
             </li>
 
             <li class="li-menu">
-              <a href="/users/searchUser">Users</a>
+              <a href="/users/searchUser">USERS</a>
               
             </li>
   
@@ -57,9 +57,9 @@
                 Con method="get" agregamos datos del formulario a la URL así aparece en la url lo que el usuario buscó luego del signo de interrogación.
                 Elementos <input> tipo "search" son campos de texto diseñados para que el usuario introduzca terminos de búsqueda.
                Con el placeholder le indicamos al usuario lo que esperamos que haga. -->
-                  <form action="buscador.html" method="get" class="uk-search uk-search-default form_envio">
-                      <a class="uk-search-icon-flip link_envio" uk-search-icon></a>
-                      <input class="uk-search-input" type="search" name="query" placeholder="Search...">
+                  <form action="/users/movies/buscador?req.query.query" method="get" class="uk-search uk-search-default form_envio">
+                      <a class="uk-search-icon-flip link_envio uk-button-small" uk-search-icon></a>
+                      <input class="uk-search-input" type="search" name="query" placeholder="Search">
                   </form>
               </div>
             </li>
@@ -67,7 +67,8 @@
             <span id="nombre-de-usuario">
             </span>
             <li class="li-login"><a class="color-black" href="#products"></a>
-              <a class="uk-button uk-button-default" href="#modal-overflow" uk-toggle>Login</a>
+              <a class="uk-icon-button" href="#modal-overflow" uk-icon="user" uk-toggle></a>
+
               <div id="modal-overflow" uk-modal>
                     <div class="uk-modal-dialog">
                         <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -77,15 +78,6 @@
                               <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
                                 <input id="nombre" class="uk-input" type="text">
-                              </div>
-                            </div>
-                            <div class="uk-margin">
-                              <div class="uk-inline">
-                               <select class="gender" name="">
-                                 <option value="f">female</option>
-                                 <option value="m">male</option>
-                                 <option value="o">other</option>
-                               </select>
                               </div>
                             </div>
                             <div class="uk-margin">
@@ -100,9 +92,19 @@
                                  <input class="uk-input" id="contraseña" type="password">
                                </div>
                              </div>
+                             <div class="uk-margin">
+                              <div class="uk-inline">
+                               <select class="gender" name="">
+                                 <option value="f">female</option>
+                                 <option value="m">male</option>
+                                 <option value="o">other</option>
+                               </select>
+                              </div>
+                            </div>
                              <div class="uk-modal-footer uk-text-right">
-                                 <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                 <button class="uk-button uk-button-primary" type="submit">Save</button>
+                              <button class="uk-button uk-button-primary" type="submit">Register</button>
+                              <button class="uk-button uk-button-primary" type="submit">Login</button>
+                              <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
                              </div>
                           </form>
                         </div>

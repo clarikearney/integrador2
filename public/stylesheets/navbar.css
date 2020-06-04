@@ -197,3 +197,10 @@ div.uk-margin {
   uk-search-input {
     padding-top: 10%;
   }
+
+nav ul li a {
+  font-size: smaller;
+}
+.uk-form-icon-flip {
+  left: 0;
+}

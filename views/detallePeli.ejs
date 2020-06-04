@@ -44,9 +44,57 @@
                      </div>
               </section>
 
+              <div class="uk-modal-body" uk-overflow-auto>
+                <form action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
+                  <div class="uk-margin-large-top">
+                    <div class="uk-inline">
+                      <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">
+                    </div>
+                  </div>
+                  <div class="uk-margin">
+                    <!-- <div class="uk-inline">
+                        <label for="email">Email</label>
+                        <input class="uk-input" id="email" type="email" name="email">
+                    </div>
+                </div>
+                   <div class="uk-margin">
+                     <div class="uk-inline">
+                       <label for="password">Password</label>
+                       <input class="uk-input" id="password" name="password">
+                     </div>
+                   </div>
+                   <div> -->
+                    <label for="resena">Leave your review</label>
+                     <textarea name="resena" id="resena" cols="30" rows="10"></textarea>
+                   </div>
+                   <div>
+                     <div>
+                      <label for="puntaje">Score the movie!</label>
+                     </div>
+                    <div>
+                      <input type="radio" id="puntaje" name="puntaje" value="0">
+                      <input type="radio" id="puntaje" name="puntaje" value="1">
+                      <input type="radio" id="puntaje" name="puntaje" value="2">
+                      <input type="radio" id="puntaje" name="puntaje" value="3">
+                      <input type="radio" id="puntaje" name="puntaje" value="4">
+                      <input type="radio" id="puntaje" name="puntaje" value="5">
+                      <input type="radio" id="puntaje" name="puntaje" value="6">
+                      <input type="radio" id="puntaje" name="puntaje" value="7">
+                      <input type="radio" id="puntaje" name="puntaje" value="8">
+                      <input type="radio" id="puntaje" name="puntaje" value="9">
+                      <input type="radio" id="puntaje" name="puntaje" value="10">
+                    </div>
+                   </div>
+                   <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="submit">Save</button>
+                </div>
+                </form>
+              </div>
+
               <% if (reviews.length > 0) { %>
                 <section>
-                  <h3>Reviews</h3>
+                  <label for="resenas">What did other people say about the movie?</label>
                   <ul>
                       <% for (let i = 0; i < reviews.length; i++) { %>
                           <li>
@@ -61,41 +109,6 @@
                   </ul>
                 </section>
               <% } %>              
-          
-                          <div class="uk-modal-body" uk-overflow-auto>
-                            <form action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
-                              <div class="uk-margin-large-top">
-                                <div class="uk-inline">
-                                  <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">
-                                </div>
-                              </div>
-                              <div class="uk-margin">
-                                <div class="uk-inline">
-                                    <!-- <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span> -->
-                                    <label for="email">Email</label>
-                                    <input class="uk-input" id="email" type="email" name="email">
-                                </div>
-                            </div>
-                               <div class="uk-margin">
-                                 <div class="uk-inline">
-                                   <label for="password">Password</label>
-                                   <input class="uk-input" id="password" name="password">
-                                 </div>
-                               </div>
-                               <div>
-                                 <textarea name="resena" id="resena" cols="30" rows="10"></textarea>
-                               </div>
-                               <div class="uk-modal-footer uk-text-right">
-                                   <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                   <button class="uk-button uk-button-primary" type="submit">Save</button>
-                               </div>
-                               <div>
-                                 <input type="radio" id="puntaje" name="puntaje" value="0">
-                                 <input type="radio" id="puntaje" name="puntaje" value="1">
-                                 <input type="radio" id="puntaje" name="puntaje" value="2">
-                               </div>
-                            </form>
-                          </div>
       
             </main>
        
