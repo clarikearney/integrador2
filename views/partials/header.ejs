@@ -73,28 +73,28 @@
                     <div class="uk-modal-dialog">
                         <button class="uk-modal-close-default" type="button" uk-close></button>
                         <div class="uk-modal-body" uk-overflow-auto>
-                          <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="#" method="get">
+                          <form id="myForm" class="uk-flex uk-flex-column uk-flex-middle" action="/users/register" method="post">
                             <div class="uk-margin-large-top">
                               <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input id="nombre" class="uk-input" type="text">
+                                <input id="nombre" class="uk-input" type="text" name="name">
                               </div>
                             </div>
                             <div class="uk-margin">
                                  <div class="uk-inline">
                                      <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: mail"></span>
-                                     <input class="uk-input" id="mail" type="text">
+                                     <input class="uk-input" id="mail" type="text" name="email">
                                  </div>
                              </div>
                              <div class="uk-margin">
                                <div class="uk-inline">
                                  <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                 <input class="uk-input" id="contraseña" type="password">
+                                 <input class="uk-input" id="contraseña" type="password" name="password">
                                </div>
                              </div>
                              <div class="uk-margin">
                               <div class="uk-inline">
-                               <select class="gender" name="">
+                               <select class="gender" name="gender">
                                  <option value="f">female</option>
                                  <option value="m">male</option>
                                  <option value="o">other</option>
@@ -103,7 +103,6 @@
                             </div>
                              <div class="uk-modal-footer uk-text-right">
                               <button class="uk-button uk-button-primary" type="submit">Sign up</button>
-                              <button class="uk-button uk-button-primary" type="submit">Sign in</button>
                               <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
                              </div>
                           </form>
