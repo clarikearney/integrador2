@@ -1,0 +1,31 @@
+
+<body>        
+    <section>
+
+        <ul class="botonesUL">
+          <li class="botonesLI">
+            <a class="uk-icon-button" href="#modal-deleteReview" uk-icon="trash" uk-toggle></a>
+          </li>
+          <li class="botonesLI">
+            <a class="uk-icon-button" href="#modal-editReview" uk-icon="settings" uk-toggle></a>
+          </li>
+        </ul>           
+      <div id="modal-deleteReview" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-body" uk-overflow-auto>            
+                  <form id="myForm" action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
+                    <% if (tipo == 'delete') { %> 
+                        <form id="modal-formLogin" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/reviews/delete/" <%= deleteId %> ></form>
+                        <% } else { %> 
+                        <form id="formLogin" method="POST" class="uk-background-secondary uk-padding uk-padding-large"  action="/users/review"></form>
+                        <% } %>                     
+                  </form>
+                      </ul>
+                    </section>
+                  <% } %>   
+                </div>
+            </div>
+        </div>
+      </section>   
+</body>
