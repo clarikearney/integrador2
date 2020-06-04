@@ -22,16 +22,99 @@
                 <iframe  class="trailer-peli" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <span>
                   <!-- el btn onclick nos permite seleccionar la pelicula como favorita -->
-                     <button onclick='agregarFavoritos(" + id + ")' class='estrellita '>&#9733; FAVORITA &#9733; </button>
                 </span>
                 </div>
               </section>
+
               <section>
-      
-              </section>
+
+                  <ul class="botonesUL">
+                    <li class="botonesLI">
+                      <a class="uk-icon-button" href="#modal-review" uk-icon="comments" uk-toggle></a>
+                    </li>
+                    <li class="botonesLI">
+                      <button onclick='agregarFavoritos(" + id + ")' class='estrellita uk-icon-button' uk-icon="heart">&#9733;  &#9733; </button>
+                    </li>
+                  </ul>           
+                <div id="modal-review" uk-modal>
+                      <div class="uk-modal-dialog">
+                          <button class="uk-modal-close-default" type="button" uk-close></button>
+                          <div class="uk-modal-body" uk-overflow-auto>            
+                            <form id="myForm" action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
+                                <div class="uk-margin">
+                                  <div class="uk-inline">
+                                    <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">
+                                  </div>
+                                </div>
+                                <div class="uk-margin">
+                                  <div class="uk-inline">
+                                      <label for="email">Email</label>
+                                      <input class="uk-input" id="email" type="email" name="email">
+                                  </div>
+                              </div>
+                                 <div class="uk-margin">
+                                   <div class="uk-inline">
+                                     <label for="password">Password</label>
+                                     <input class="uk-input" id="password" name="password">
+                                   </div>
+                                 </div>
+                                 <div class="uk-margin">
+                                 <div class="uk-modal-title	">
+                                   <textarea name="resena" id="resena" cols="30" rows="10" placeholder="Leave your review"></textarea>
+                                 </div>
+                                </div>
+                                <div class="uk-margin">
+                                  <div>
+                                    <label for="puntaje">Score the movie!</label>
+                                   </div>
+                                  <div>
+                                    <input type="radio" id="puntaje" name="puntaje" value="0">
+                                    <input type="radio" id="puntaje" name="puntaje" value="1">
+                                    <input type="radio" id="puntaje" name="puntaje" value="2">
+                                    <input type="radio" id="puntaje" name="puntaje" value="3">
+                                    <input type="radio" id="puntaje" name="puntaje" value="4">
+                                    <input type="radio" id="puntaje" name="puntaje" value="5">
+                                    <input type="radio" id="puntaje" name="puntaje" value="6">
+                                    <input type="radio" id="puntaje" name="puntaje" value="7">
+                                    <input type="radio" id="puntaje" name="puntaje" value="8">
+                                    <input type="radio" id="puntaje" name="puntaje" value="9">
+                                    <input type="radio" id="puntaje" name="puntaje" value="10">
+                                  </div>
+                                 </div>
+                                 <div class="uk-modal-footer uk-text-right">
+                                  <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                  <button class="uk-button uk-button-primary" type="submit">Save</button>
+                              </div>
+
+                              <% if (reviews.length > 0) { %>
+                                <section>
+                                  <!-- <label for="resenas">What did other people say about the movie?</label> -->
+                                  <ul>
+                                      <% for (let i = 0; i < reviews.length; i++) { %>
+                                          <li>
+                                            <%= reviews[i].name %> <br>
+                                            <%= reviews[i].resena %> <br>
+                                            <%= reviews[i].createdAt %> <br>
+                                            <%=reviews[i].oneUser.name%> <br>
+                                            <hr>
+                                          </li>
+                                      <% } %>
+
+                            </form>
+              
+                                </ul>
+                              </section>
+                            <% } %>   
+
+                          </div>
+                      </div>
+                  </div>
+                </section>    
+
+
               <section>
              <div class="recom">
-                     <h4> Películas Recomendadas </h4>
+                     <h4> Similar movies </h4>
                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push;ratio: 2:3">
                      <ul class="uk-slideshow-items recomendaciones">
                        <!-- Al ejecutarse la función se agregaran li a través de js en la ul vacía -->
@@ -42,73 +125,7 @@
                          <!-- Hipervínculo para regresar a la película anterior -->
                          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                      </div>
-              </section>
-
-              <div class="uk-modal-body" uk-overflow-auto>
-                <form action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
-                  <div class="uk-margin-large-top">
-                    <div class="uk-inline">
-                      <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">
-                    </div>
-                  </div>
-                  <div class="uk-margin">
-                    <div class="uk-inline">
-                        <label for="email">Email</label>
-                        <input class="uk-input" id="email" type="email" name="email">
-                    </div>
-                </div>
-                   <div class="uk-margin">
-                     <div class="uk-inline">
-                       <label for="password">Password</label>
-                       <input class="uk-input" id="password" name="password">
-                     </div>
-                   </div>
-                   <div>
-                    <label for="resena">Leave your review</label>
-                     <textarea name="resena" id="resena" cols="30" rows="10"></textarea>
-                   </div>
-                   <div>
-                     <div>
-                      <label for="puntaje">Score the movie!</label>
-                     </div>
-                    <div>
-                      <input type="radio" id="puntaje" name="puntaje" value="0">
-                      <input type="radio" id="puntaje" name="puntaje" value="1">
-                      <input type="radio" id="puntaje" name="puntaje" value="2">
-                      <input type="radio" id="puntaje" name="puntaje" value="3">
-                      <input type="radio" id="puntaje" name="puntaje" value="4">
-                      <input type="radio" id="puntaje" name="puntaje" value="5">
-                      <input type="radio" id="puntaje" name="puntaje" value="6">
-                      <input type="radio" id="puntaje" name="puntaje" value="7">
-                      <input type="radio" id="puntaje" name="puntaje" value="8">
-                      <input type="radio" id="puntaje" name="puntaje" value="9">
-                      <input type="radio" id="puntaje" name="puntaje" value="10">
-                    </div>
-                   </div>
-                   <div class="uk-modal-footer uk-text-right">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                    <button class="uk-button uk-button-primary" type="submit">Save</button>
-                </div>
-                </form>
-              </div>
-
-              <% if (reviews.length > 0) { %>
-                <section>
-                  <label for="resenas">What did other people say about the movie?</label>
-                  <ul>
-                      <% for (let i = 0; i < reviews.length; i++) { %>
-                          <li>
-                            <%= reviews[i].name %> <br>
-                            <%= reviews[i].resena %> <br>
-                            <%= reviews[i].createdAt %> <br>
-                            <%=reviews[i].oneUser.name%> <br>
-                            <hr>
-                          </li>
-                      <% } %>
-
-                  </ul>
-                </section>
-              <% } %>              
+              </section>       
       
             </main>
        

@@ -3,4 +3,6 @@
 main.clase-peli {
     z-index: 200;
   }
-  
+  html {
+    background-color: rgb(231, 237, 243);
+  }

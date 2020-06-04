@@ -23,4 +23,35 @@
     font-size: 1rem;
     color: #39f;
   }
+  div.formReview {
+    margin-top: 0%;
+  }
+  .uk-icon-button {
+    margin-top: 5%;
+  }
+  button.estrellita {
+    margin-top: 5%;
+  }
+  nav ul li a {
+    text-decoration: none;
+    text-decoration-color: #FFFFFF;
+  }
+  li {
+    list-style-type: none;
+  }
   
+  ul.botonesUL {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+  }
+  li.botonesLI {
+    margin: 0;
+    padding: 20px 12px 0 12px;
+    flex-direction: row;
+    list-style-type: none;
+    font-size: 1rem;
+  }
+  html {
+    background-color: rgb(231, 237, 243);
+  }
