@@ -44,6 +44,7 @@ let usersController = {
                     return res.render('registerError', {error: 'Email already taken!'})
                 } else {
                     db.User.create(user)
+                    res.send('Welcome to MC Movies');
                     return res.redirect('/')
                 }
             })
