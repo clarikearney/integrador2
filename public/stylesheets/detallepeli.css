@@ -7,7 +7,7 @@
     text-align: center;
     text-transform: full-width;
     font-size: 20px;
-    border: 5px inset #39f;
+    border: 5px inset rgb(227, 122, 100);
     border-radius: 7px;
     margin-top: 20px;
     padding-top: 0;
@@ -21,7 +21,7 @@
     font-size: 16px;
     font-family: Russo One;
     font-size: 1rem;
-    color: #39f;
+    color: rgb(227, 122, 100);
   }
   div.formReview {
     margin-top: 0%;
@@ -53,5 +53,5 @@
     font-size: 1rem;
   }
   html {
-    background-color: rgb(231, 237, 243);
+    background-color: white;
   }
