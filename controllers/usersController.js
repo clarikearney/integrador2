@@ -1,6 +1,8 @@
 let db = require("../database/models");
 let op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
+let controller = require('./controller');
+let moduloLogin = require('../modulo-login');
 
 let usersController = {
 
@@ -50,16 +52,22 @@ let usersController = {
             })
         },
         logUser: function(req, res) {
-            res.render('login', {tipo: 'log'});
+            res.render('login');
         },
         confirmUser: function(req, res) {
+            
+            // return res.send(req.body) controlador devuelve lo que escribí en el form del login
             moduloLogin.validar(req.body.email, req.body.password)
             .then(resultado => {
+                
                 if(resultado == undefined) {
-                    res.redirect('/users/reviews')
+                    // redirecciono al login
+                    res.redirect('/users/reviews'); 
                 } else {
-                res.redirect('/users/reviews' + resultado.id)
+                    // redirecciono con el id
+                res.redirect('/users/reviews/' + resultado.id)
                 }})
+
             },
     
         // SI ESTA OK EL USUARIO MAIL Y CONTRASEÑA, TRAE LAS RESEÑAS DE ESE USUARIO
@@ -156,8 +164,8 @@ let usersController = {
             })
             .then (function (reviews){
                 res.render ("userDetail", {
-                    user:usuario,
-                    reviews:reviews
+                    name:name,
+                    resena:resena
                 })
 
             })
