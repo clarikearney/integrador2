@@ -4,23 +4,26 @@
     <link rel="stylesheet" href="/stylesheets/home.css">
     <body>
 <section>
-    <h3>Welcome to <%= oneUser.user %>'s profile</h3>
-    <ul>
-        <li>
-            Email: <%= oneUser.email %>
-        </li>
-        <li>
-            Birth date: <%= oneUser.birth_date %>
-        </li>
-    </ul>
+    <h2> <%= resultado[0]oneUser.name %>'s reviews</h2>
+    <p>Your email: <% resultado[0].oneUser.email %>  </p>
 
-    <h2> <%= oneUser.user %>'s Reviews</h2>
-    <% if (Reviews.length >0) { %>
-                <% for (let i=0; i< users.length; i++){ %>
+    <% if (resultado.length >0) { %>
+                <% for (let i=0; i< resultado.length; i++){ %>
 
-                <h4> review: <%= Reviews[].pelicula_id %> </h4>
-                <p> <%= Reviews[].resena %> </p>
-                <hr>
+                <div class="uk-card uk-card-secondary uk-margin">
+                    <div class="uk-card-badge uk-margin-bottom" style="color: aliceblue;">
+                        Score: <%= resultado[0].puntaje %> 
+                    </div>
+                    <div class="uk-card-body">
+                        <h4 class="uk-margin-top"> <%= resultado[i].resena %>  </h4>
+                    </div>
+                    <div class="uk-card-footer uk-flex-between">
+                        <a class="uk-text-success" href="/users/reviews/edit"> <%= resultado[i].id %> Edit </a>
+                        <a class="uk-text-primary" href="/detalle?pelicula_id=<%= resultado[i].pelicula_id %>  <%= resultado[0].id %> Go to the movie </a>
+                        <a class="uk-text-danger" href="/users/reviews/delete"> <%= resultado[i].id %> Delete </a>
+                    </div>
+                </div>
+                
         <% } %>    
         <% } else { %> 
             <p> We haven't found reviews </p>

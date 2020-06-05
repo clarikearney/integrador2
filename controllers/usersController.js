@@ -46,7 +46,6 @@ let usersController = {
                     return res.render('registerError', {error: 'Email already taken!'})
                 } else {
                     db.User.create(user)
-                    res.send('Welcome to MC Movies');
                     return res.redirect('/')
                 }
             })
@@ -56,17 +55,17 @@ let usersController = {
         },
         confirmUser: function(req, res) {
             
-            // return res.send(req.body) controlador devuelve lo que escribí en el form del login
+
             moduloLogin.validar(req.body.email, req.body.password)
             .then(resultado => {
                 
                 if(resultado == undefined) {
-                    // redirecciono al login
                     res.redirect('/users/reviews'); 
                 } else {
                     // redirecciono con el id
                 res.redirect('/users/reviews/' + resultado.id)
-                }})
+                }
+            })
 
             },
     
@@ -76,12 +75,11 @@ let usersController = {
                 where: [
                     {usuario_id: req.params.id}
                 ],
-                include: [
-                    {association: oneUser}
-                ]
+                include: ['oneUser']
+                
             })
             .then(resultado => {
-                res.render('reviews', {resultado: resultado})
+                res.render('userDetail', {resultado: resultado})
             })
         },
         showEdit: function(req, res) {
@@ -95,25 +93,25 @@ let usersController = {
             })
         },
         confirmEdit: function(req, res) {
-            let updateReview = {
-            resena: req.body.resena,
-            puntaje: req.body.puntaje,
-            id: req.body.id
-        }
-        db.Review.update({
-            resena: updateReview.resena,
-            puntaje: updateReview.puntaje
-        }, {
-            where: {
-                id: updateReview.id
-            }
-        })
-        .then(() => {
-            db.Resena.findByPk(req.params.id)
+            moduloLogin.validar(req.body.email, req.body.password)
             .then(resultado => {
-                res.redirect('/users/reviews' + resultado.usuario_id)
-            })
-        })
+                if (resultado != undefined) {
+                    db.Review.update({
+                        resena: req.body.resena,
+                        puntaje: req.body.puntaje
+                    }, {
+                        where: {
+                            id: req.params.id,
+                        }
+                    })
+                    .then(() => {
+                        res.redirect('/users/reviews/' + resultadoo.id);
+                    })
+                } else {
+                    return res.send('Your email or password are incorrect');
+                    return res.redirect('/users/reviews/edit' + req.params.id);
+                }
+            });
     },
         deleteReview: function(req, res) {
             res.render('loginForReviewDelete', {deleteId: req.params.id});
