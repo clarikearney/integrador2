@@ -30,7 +30,7 @@ moduloLogin.validar(req.body.email, req.body.password)
     if(usuario != undefined) {
         db.Review.create({
             pelicula_id: req.body.usuario_id,
-            usuario_id: user.id,
+            usuario_id: usuario.id,
             resena: req.body.resena,
             puntaje: req.body.puntaje
         })

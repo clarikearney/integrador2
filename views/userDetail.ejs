@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="/stylesheets/home.css">
     <body>
 <section>
-    <h2> <%= resultado[0]oneUser.name %>'s reviews</h2>
-    <p>Your email: <% resultado[0].oneUser.email %>  </p>
 
-    <% if (resultado.length >0) { %>
+    <% if (resultado.length >0)  { %> 
+        <h2> <%= resultado[0].oneUser.name %>'s reviews</h2>
+    <p>Your email: <%= resultado[0].oneUser.email %>  </p>
                 <% for (let i=0; i< resultado.length; i++){ %>
 
                 <div class="uk-card uk-card-secondary uk-margin">

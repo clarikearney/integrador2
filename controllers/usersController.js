@@ -26,8 +26,7 @@ let usersController = {
         })
         },
         register: function(req, res) {
-            var salt = bcrypt.genSaltSync(10);
-            var hash = bcrypt.hashSync(req.body.password, salt);
+            var hash = bcrypt.hashSync(req.body.password, 10);
     
             let user = {
                 name: req.body.name,
@@ -35,6 +34,8 @@ let usersController = {
                 gender: req.body.gender,
                 password: hash
             }
+
+
             db.User.findAll({
                 where: [
                     {email: req.body.email}
@@ -54,12 +55,11 @@ let usersController = {
         logUser: function(req, res) {
             res.render('login');
         },
-        confirmUser: function(req, res) {
-            
 
+        //Metodo que confirma el login
+        confirmUser: function (req, res) {
             moduloLogin.validar(req.body.email, req.body.password)
             .then(resultado => {
-                
                 if(resultado == undefined) {
                     res.redirect('/users/reviews'); 
                 } else {
@@ -71,26 +71,26 @@ let usersController = {
             },
     
         // SI ESTA OK EL USUARIO MAIL Y CONTRASEÑA, TRAE LAS RESEÑAS DE ESE USUARIO
-        getReviews: function(req, res) {
+        getReviews: function (req, res) {
             db.Review.findAll({
                 where: [
                     {usuario_id: req.params.id}
                 ],
-                include: ['oneUser']
+                include: [ "oneUser" ]
                 
             })
             .then(resultado => {
                 res.render('userDetail', {resultado: resultado})
             })
         },
-        showEdit: function(req, res) {
+        showEdit: function (req, res) {
             db.Review.findAll({
                 where: [
                     {id: req.params.id}
                 ]
             })
             .then(resultado => {
-                res.redner('editReview', {resultado: resultado})
+                res.render('editReview', {resultado: resultado})
             })
         },
         confirmEdit: function(req, res) {
