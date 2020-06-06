@@ -32,7 +32,7 @@ moduloLogin.validar(req.body.email, req.body.password)
             pelicula_id: req.body.usuario_id,
             usuario_id: usuario.id,
             resena: req.body.resena,
-            puntaje: req.body.puntaje
+            puntaje: req.body.puntaje,
         })
         .then(function() {
             res.redirect('/movies/detalle/?pelicula_id' + req.body.pelicula_id);

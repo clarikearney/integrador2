@@ -32,6 +32,7 @@ let usersController = {
                 name: req.body.name,
                 email: req.body.email,
                 gender: req.body.gender,
+                birth_date: req.body.birth_date,
                 password: hash
             }
 
