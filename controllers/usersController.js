@@ -93,7 +93,7 @@ let usersController = {
                 ]
             })
             .then(resultado => {
-                res.render('editReview', {resultado: resultado})
+                res.render('editReview', { resultado: resultado })
             })
         },
         confirmEdit: function(req, res) {
@@ -102,17 +102,16 @@ let usersController = {
                 if (resultado != undefined) {
                     db.Review.update({
                         resena: req.body.resena,
-                        puntaje: req.body.puntaje
+                        puntaje: req.body.puntaje,
                     }, {
                         where: {
                             id: req.params.id,
                         }
                     })
                     .then(() => {
-                        res.redirect('/users/reviews/' + resultadoo.id);
+                     res.redirect('/users/reviews/' + resultado.id)
                     })
                 } else {
-                    return res.send('Your email or password are incorrect');
                     return res.redirect('/users/reviews/edit' + req.params.id);
                 }
             });
