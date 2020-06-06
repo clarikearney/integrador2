@@ -28,9 +28,18 @@
                                 <p class="uk-margin-top"> <%= resultado[i].resena %>  </p>
                             </li>
                             <li>
-                                <a class="uk-icon-button" uk-icon="settings" uk-toggle href="/users/reviews/edit"> <%= resultado[i].id %>  </a>
-                                <a class="uk-icon-button" uk-icon="trash" uk-toggle href="/detalle?idPelicula=<%= resultado[i].pelicula_id %>  <%= resultado[0].id %> Go to the movie </a>
-                                <a class="uk-text-danger" href="/users/reviews/delete"> <%= resultado[i].id %>  </a>
+                                <a class="uk-icon-button" uk-icon="settings" uk-toggle href="/users/reviews/edit/ <%= resultado[i].id %>" > </a>
+                                <p>Edit</p>
+                            </li>
+                            <li>
+                                <a class="uk-icon-button" uk-icon="trash" uk-toggle href="/detalle?idDePelicula= <%= resultado[0].id %>"> </a>
+                                <p>Delete</p> 
+                            </li>
+                            <li>
+                                <a class="uk-icon-button" uk-icon="play-circle" uk_toggle href="/users/reviews/delete/ <%= resultado[i].id %>"> </a>
+                                <p>Go to movie</p>
+                            </li>
+                            <li>
                                 <hr>
                             </li>
                         </ul>
