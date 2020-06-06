@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
   
   
   
-          for (var i = 0; i < 10; i++) {
+          for (var i = 0; i < 100; i++) {
   
             // Para obtener la información que me interese obtener busco en el objeto arrayDePeliculas las propiedades que me interesan (el nombre de cada propiedad es distinto para cada api)
   
