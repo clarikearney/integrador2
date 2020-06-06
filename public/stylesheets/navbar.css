@@ -60,6 +60,8 @@ li {
 
 nav ul li a:hover {
   text-decoration: underline;
+  text-decoration-color:#C9EDB2;
+  color: #C9EDB2;
 }
 #li-logo img{
   margin-left:0;
@@ -117,12 +119,13 @@ h3 {
 #desplegable {
   position: absolute;
   display: none;
-  background-color: #E8F0F3;
+  background-color: whitesmoke;
 
 }
 /*me muestra la lista de generos desplegable cuando paso el cursor*/
 #contenedor:hover > #desplegable {
   display: block;
+  color: #C9EDB2;
 }
 
 footer nav.copyright img.img-poweredby{
