@@ -20,7 +20,7 @@ window.addEventListener("load", function() {
           var arrayDePeliculas = informacion.results
           console.log(arrayDePeliculas);
   
-          for (var i = 0; i < 10; i++) {
+          for (var i = 0; i < 100; i++) {
   
             var id = arrayDePeliculas[i].id
             var title = arrayDePeliculas[i].title // adaptar los puntos a las caract. de la API

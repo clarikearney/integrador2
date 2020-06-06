@@ -100,14 +100,14 @@ window.addEventListener("load", function() {
         li += '<h2>' + title + '</h2>'
         li += '<img src=' + imgPath + imagenpeli + '>'
         li += '<h4>' + sinopsis + '</h4>'
-        li += '<h4>' + "Fecha de estreno: " + fechaEstreno + '</h4>'
-        li += '<h4>' + "Lenguaje: " + lenguajepeli + '</h4>'
+        li += '<h4>' + "Release date: " + fechaEstreno + '</h4>'
+        li += '<h4>' + "Language: " + lenguajepeli + '</h4>'
         li += '<h3>'
         // como los generos estan en un array
         // ¿Cómo obtengo la cantidad de elementos de un array? .length
         // Si  queremos obtener toodas la informacion de lo que el usuario seleccione (ya sea una palabra en el buscador, un género, la información del detalle de una película, las películas de mayor puntaje, etc.) tenemos que hacer .length
         for (var i=0; i < arrayDeGeneros.length; i++){
-              li += '<a href="generos.html?id=' + arrayDeGeneros[i].id + '">'
+              li += '<a href="generos?id=' + arrayDeGeneros[i].id + '">'
               li += arrayDeGeneros[i].name
               // CONDICIONALES: Generar condiciones para ejecutar código
               // if(condición lógica)
