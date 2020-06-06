@@ -36,6 +36,26 @@ h5.proximas-pelis {
 h5.mejor-puntaje {
   padding-left: 20px;
 }
+
+div.myReviews {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  margin-top: 8%;
+}
+div.myReviews ul li {
+  list-style-type: none;
+}
+div.myReviews ul li a {
+  text-decoration: none;
+  text-decoration-color: #FFFFFF;
+}
+li {
+  list-style-type: none;
+}
+
 @media screen and (max-width: 420px) {
   /* Diseño Responsive */
   /* Media Query: conjunto de reglas que permiten re-organizar el contenido dependiendo de las condiciones de visualización del documento (se deben escribir al final del css)*/

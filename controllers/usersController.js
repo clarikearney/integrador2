@@ -77,7 +77,9 @@ let usersController = {
                 where: [
                     {usuario_id: req.params.id}
                 ],
-                include: [ "oneUser" ]
+                include: [  
+                    {association: "oneUser"}
+                 ]
                 
             })
             .then(resultado => {

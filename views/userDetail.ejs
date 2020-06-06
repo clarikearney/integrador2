@@ -3,32 +3,47 @@
     <%-  include('./partials/head') %> 
     <link rel="stylesheet" href="/stylesheets/home.css">
     <body>
-<section>
+        <%- include('./partials/header') %> 
 
-    <% if (resultado.length >0)  { %> 
-        <h2> <%= resultado[0].oneUser.name %>'s reviews</h2>
-    <p>Your email: <%= resultado[0].oneUser.email %>  </p>
-                <% for (let i=0; i< resultado.length; i++){ %>
 
-                <div class="uk-card uk-card-secondary uk-margin">
-                    <div class="uk-card-badge uk-margin-bottom" style="color: aliceblue;">
-                        Score: <%= resultado[0].puntaje %> 
+        <!-- MY REVIEWS -->
+    <section>
+        <% if (resultado.length >0)  { %> 
+                    <div class="titleReviews">
+                        <ul>
+                            <h2> <%= resultado[0].oneUser.name %>'s reviews</h2>
+                            <p>Your email: <%= resultado[0].oneUser.email %>  </p>
+                        </ul>
                     </div>
-                    <div class="uk-card-body">
-                        <h4 class="uk-margin-top"> <%= resultado[i].resena %>  </h4>
                     </div>
-                    <div class="uk-card-footer uk-flex-between">
-                        <a class="uk-text-success" href="/users/reviews/edit"> <%= resultado[i].id %> Edit </a>
-                        <a class="uk-text-primary" href="/detalle?pelicula_id=<%= resultado[i].pelicula_id %>  <%= resultado[0].id %> Go to the movie </a>
-                        <a class="uk-text-danger" href="/users/reviews/delete"> <%= resultado[i].id %> Delete </a>
+                    <% for (let i=0; i< resultado.length; i++){ %>
+                    <div class="myReviews">
+                        <ul>
+                            <li>
+                                <div class="uk-card-badge uk-label uk-margin-bottom">
+                                    <%= resultado[0].puntaje %> 
+                                </div>
+                            </li>
+                            <li>
+                                <p class="uk-margin-top"> <%= resultado[i].resena %>  </p>
+                            </li>
+                            <li>
+                                <a class="uk-icon-button" uk-icon="settings" uk-toggle href="/users/reviews/edit"> <%= resultado[i].id %>  </a>
+                                <a class="uk-icon-button" uk-icon="trash" uk-toggle href="/detalle?idPelicula=<%= resultado[i].pelicula_id %>  <%= resultado[0].id %> Go to the movie </a>
+                                <a class="uk-text-danger" href="/users/reviews/delete"> <%= resultado[i].id %>  </a>
+                                <hr>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                
-        <% } %>    
-        <% } else { %> 
-            <p> We haven't found reviews </p>
-    <% } %>  
-</section> 
+                <% } %>    
+                <% } else { %> 
+                    <p> We haven't found reviews </p>
+            <% } %>  
+    </section> 
+
+<!-- DELETE REVIEWS-->
+
+
 <%- include('./partials/footer') %> 
 </body>
 </html>

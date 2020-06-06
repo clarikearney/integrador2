@@ -8,7 +8,7 @@ let moduloLogin = {
             }
         })
         .then(function(usuario) {
-            return User != null;
+            return usuario != null;
         })
     },
 
