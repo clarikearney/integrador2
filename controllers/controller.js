@@ -8,6 +8,11 @@ let controller = {
 home: function (req, res) {
     res.render('home')
 },
+
+buscador: function (req, res) {
+    res.render('buscador')
+},
+
 detail: function (req, res) {
     db.Review.findAll({
         include: ['oneUser']
