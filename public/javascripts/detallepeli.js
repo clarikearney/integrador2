@@ -116,7 +116,7 @@ window.addEventListener("load", function() {
               if (i < arrayDeGeneros) {
                 li += ' - '
               }
-              li += '</a>'
+              li += '</a>, '
         }
         li += '</h3>'
         li += '</li>'
@@ -143,7 +143,7 @@ window.addEventListener("load", function() {
  // if(true);else(false)
 
       if (favoritas.indexOf(idDePelicula) >= 0 ) {
-        document.querySelector(".estrellita").style.backgroundColor = "pink";
+        document.querySelector(".estrellita").style.backgroundColor = "lightblue";
       }
        // FIN BLOQUE 2
 
@@ -170,7 +170,7 @@ window.addEventListener("load", function() {
            favoritas.push(idDePelicula)
            // ¿Cómo agregar un elemento al final de un array?
            // El método push () añade uno o más elementos al final de un array y devuelve la nueva longitud del array
-        document.querySelector(".estrellita").style.backgroundColor = "pink"
+        document.querySelector(".estrellita").style.backgroundColor = "lightblue"
 
          }
          // FIN BLOQUE 3A

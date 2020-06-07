@@ -4,6 +4,10 @@
 /* box-sizing: propiedad CSS para cambiar el modelo de caja por defecto de los navegadores. */
 /* border-box: hacemos que el ancho especificado sea equivalente al ancho total */
 a {
+  color: rgb(146, 163, 163);
+  font-size: 1rem;
+}
+nav.navHeader a {
   color: white;
 }
 
@@ -50,6 +54,7 @@ nav ul li {
   list-style-type: none;
   font-size: 1.5rem;
 }
+
 nav ul li a {
   text-decoration: none;
   text-decoration-color: #FFFFFF;

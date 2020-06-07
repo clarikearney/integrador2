@@ -37,9 +37,11 @@
     margin-top: 5%;
     border-color: black;
   }
+  button {
+    border-color: black;
+  }
   nav ul li a {
     text-decoration: none;
-    text-decoration-color: #FFFFF;
   }
   li {
     list-style-type: none;
