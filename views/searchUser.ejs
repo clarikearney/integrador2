@@ -8,12 +8,11 @@
     <%- include('./partials/header') %> 
     <section>
         <div class="uk-modal-body" uk-overflow-auto>
-            <form action="/users/searchUsersResult" class="uk-flex uk-flex-column uk-flex-middle" method="get">
+            <form action="/users/searchUsersResult" class="uk-background-secondary uk-padding uk-padding-large" method="get">
               <div class="uk-margin-large-top">
                 <div class="uk-inline">
-                  <!-- <span class="uk-form-icon" uk-icon="icon: user"></span> -->
-                  <!-- <label for="">Search users</label> -->
-                  <input id="text" class="searchUser" type="searchUser" name="searchUser" placeholder="Search users">
+                  <span class="uk-form-icon" uk-icon="icon: search"></span>
+                  <input id="text" class="searchUser uk-input" type="searchUser" name="searchUser" placeholder="Search users">
                 </div>
               </div>
               <div class="uk-margin">
@@ -25,7 +24,7 @@
           </div>
     </section>
     <%- include('./partials/footer') %> 
-</body>
+</body> 
 
 </html>
 
