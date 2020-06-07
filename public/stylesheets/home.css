@@ -3,9 +3,8 @@
 /* border-box: hacemos que el ancho especificado sea equivalente al ancho total */
 
 html {
-  background-color: white;
+  rgb(214, 192, 194);
 }
-
 #puntaje {
 padding-top: 0;
 }
@@ -22,11 +21,10 @@ section h5 {
   margin-top: 15px;
   margin-bottom: 10px;
   font-size: 1rem;
-  border: 5px inset #F5B778;
-  border-radius: 7px;
   font-family: Russo One;
   font-size: 1rem;
   text-align: center;
+  background-color: teal;
 }
 
 h5.proximas-pelis {
@@ -87,4 +85,5 @@ li {
   h5.mejor-puntaje {
     padding-left: 0px;
   }
+  
   }
