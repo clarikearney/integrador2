@@ -31,6 +31,7 @@ header nav {
   height: 80px;
   box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
 }
+
 /* Queremos lograr que el contenido del sitio sea responsive usando flexbox */
 /* En el contenedor de los elementos de lista (ul) pusimos display:flex para que los elementos se acomoden horizontalmente. Al asignarle un ancho del 100%  a los elementos contenidos en el ul, con el space around el resto del porcentaje fue el margen esperado */
 nav ul {
