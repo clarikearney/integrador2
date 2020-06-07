@@ -24,7 +24,7 @@ detail: function (req, res) {
     })
     .then((reviews)=> {
         res.render('detallePeli', {
-            pelicula_id: req.query.pelicula_id,
+            pelicula_id: req.params.idDePelicula,
             reviews: reviews});
     })
 },
@@ -34,13 +34,13 @@ moduloLogin.validar(req.body.email, req.body.password)
 .then(function(usuario) {
     if(usuario != undefined) {
         db.Review.create({
-            pelicula_id: req.body.usuario_id,
+            pelicula_id: req.params.idDePelicula,
             usuario_id: usuario.id,
             resena: req.body.resena,
             puntaje: req.body.puntaje,
         })
         .then(function() {
-            res.redirect('/movies/detalle/?pelicula_id' + req.body.pelicula_id);
+            res.redirect('/movies/detalle/?idDePelicula=' + req.body.pelicula_id);
         })
      }  else {
             res.send('Error')

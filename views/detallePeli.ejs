@@ -41,7 +41,7 @@
                       <div class="uk-modal-dialog">
                           <button class="uk-modal-close-default" type="button" uk-close></button>
                           <div class="uk-modal-body" uk-overflow-auto>            
-                            <form id="myForm" action="/movies/detalle" class="uk-flex uk-flex-column uk-flex-middle" method="post">
+                            <form id="myForm" action="/movies/detalle/ <%= pelicula_id %> " class="uk-flex uk-flex-column uk-flex-middle" method="post">
                                 <div class="uk-margin">
                                   <div class="uk-inline">
                                     <input type="hidden" name="pelicula_id" value="<%= pelicula_id %> ">

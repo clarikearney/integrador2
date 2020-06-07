@@ -123,9 +123,11 @@ let usersController = {
             .then((resultado) => {
                 if (resultado != null) {
                     db.Review.destroy({
-                        where: {
-                            id: req.params.id,
-                        }
+                        where: [
+                            {
+                                id: req.params.id,
+                            }
+                        ]
                     })
                     res.redirect('/users/reviews/');
                 } else {

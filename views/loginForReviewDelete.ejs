@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <%-  include('./partials/head') %> 
@@ -6,12 +7,32 @@
 <body>
   <%- include('./partials/header') %>  
     <div class="uk-container">
-        <div class="uk-section uk-section-large">
-          <form id="formDelete" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/reviews/delete/<%= deleteId %> ">
-          
-          </form>
-        </div>
+      <div class="uk-section uk-section-large">
+        <form id="formDelete" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/reviews/delete/<%= deleteId %> ">
+        
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                    <input class="uk-input" id="email" type="text" name="email">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input class="uk-input" id="pass" type="password" name="password">
+                </div>
+            </div>
+            </div>
+               <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-button-primary" type="submit">Sign in</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+               </div>
+            </div>
+
+        </form>
       </div>
-<%- include('./partials/footer') %> 
+    </div>
+    <%- include('./partials/footer') %> 
 </body>
 </html>
+  
