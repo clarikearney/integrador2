@@ -87,18 +87,14 @@ let usersController = {
             })
         },
         showEdit: function (req, res) {
-            db.Review.findAll({
-                where: [
-                    {id: req.params.id}
-                ]
-            })
-            .then(resultado => {
+            db.Review.findByPk(req.params.id)
+            .then((resultado) => {
                 res.render('editReview', { resultado: resultado })
             })
         },
         confirmEdit: function(req, res) {
             moduloLogin.validar(req.body.email, req.body.password)
-            .then(resultado => {
+            .then((resultado) => {
                 if (resultado != undefined) {
                     db.Review.update({
                         resena: req.body.resena,

@@ -21,7 +21,7 @@
                         <ul>
                             <li>
                                 <div class="uk-card-badge uk-label uk-margin-bottom">
-                                    <%= resultado[0].puntaje %> 
+                                    <%= resultado[i].puntaje %> 
                                 </div>
                             </li>
                             <li>
@@ -36,7 +36,7 @@
                                 <p>Delete</p> 
                             </li>
                             <li>
-                                <a class="uk-icon-button" uk-icon="play-circle" uk_toggle href="/movies/detalle?idDePelicula= <%= resultado[i].id %>"> </a>
+                                <a class="uk-icon-button" uk-icon="play-circle" uk_toggle href="/movies/detalle?idDePelicula= <%= resultado[i].pelicula_id %>"> </a>
                                 <p>Go to movie</p>
                             </li>
                             <li>

@@ -8,8 +8,8 @@ router.get('/generos', controller.genres);
 router.get('/favoritas', controller.favorite);
 router.get('/buscador', controller.buscador);
 
-router.get('/detalle', controller.detail);
-router.post('/detalle', controller.create);
+router.get('/detalle/:id', controller.detail);
+router.post('/detalle/:id', controller.create);
 
 module.exports = router;
 

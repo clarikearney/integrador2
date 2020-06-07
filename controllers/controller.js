@@ -1,7 +1,5 @@
 let db = require('../database/models');
 let moduloLogin = require('../modulo-login');
-let usersController = require('./usersController');
-const bcrypt = require('bcryptjs');
 
 let controller = {
 
@@ -13,22 +11,24 @@ buscador: function (req, res) {
     res.render('buscador')
 },
 
-detail: function (req, res) {
-    db.Review.findAll({
-        include: ['oneUser']
-    })
-    .then(function(reviews) {
-        res.render('detallePeli', {
-            pelicula_id: req.query.pelicula_id,
-            reviews: reviews});
-    })
-},
 genres: function (req, res) {
     res.render('generos')
 },
 favorite: function (req, res) {
     res.render('favoritas')
 },
+
+detail: function (req, res) {
+    db.Review.findAll({
+        include: ['oneUser']
+    })
+    .then((reviews)=> {
+        res.render('detallePeli', {
+            pelicula_id: req.query.pelicula_id,
+            reviews: reviews});
+    })
+},
+
 create: function (req, res) {
 moduloLogin.validar(req.body.email, req.body.password)
 .then(function(usuario) {
