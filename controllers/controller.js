@@ -1,6 +1,6 @@
 let db = require('../database/models');
 let moduloLogin = require('../modulo-login');
-let usersControllere = require('./usersController');
+let usersController = require('./usersController');
 const bcrypt = require('bcryptjs');
 
 let controller = {

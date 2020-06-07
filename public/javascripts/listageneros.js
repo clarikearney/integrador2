@@ -24,7 +24,7 @@ window.onload = function() {
             var id = generos[i].id // adaptar los puntos a las caract. de la API
             var title = generos[i].name // adaptar los puntos a las caract. de la API
   
-            document.querySelector("#desplegable").innerHTML += '<p> <a class="dropdown-menu" href=generos?id=' + id + '>' + title + '</a></p>'
+            document.querySelector("#desplegable").innerHTML += '<p> <a class="dropdown-menu" href=/movies/generos?id=' + id + '>' + title + '</a></p>'
   
           }
   
