@@ -52,5 +52,4 @@ moduloLogin.validar(req.body.email, req.body.password)
 }; 
 
 module.exports = controller;
-module.exports = controller;
 

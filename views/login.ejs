@@ -1,6 +1,11 @@
 
-<body>        
+<!DOCTYPE html>
+<html lang="en">
+  <%-  include('./partials/head') %> 
+  <link rel="stylesheet" href="/stylesheets/home.css">
 
+<body>
+  <%- include('./partials/header') %>  
     <div class="uk-container">
       <div class="uk-section uk-section-large">
         <form id="formLogin" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/reviews ">
@@ -27,6 +32,7 @@
         </form>
       </div>
     </div>
-
-  </body>
+    <%- include('./partials/footer') %> 
+</body>
+</html>
   

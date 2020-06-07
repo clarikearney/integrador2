@@ -98,7 +98,8 @@ let usersController = {
                 if (resultado != undefined) {
                     db.Review.update({
                         resena: req.body.resena,
-                        puntaje: req.body.puntaje,
+                        puntaje: req.body.puntaje, 
+                        pelicula_id: req.params.pelicula_id,
                     }, {
                         where: {
                             id: req.params.id,
@@ -113,11 +114,13 @@ let usersController = {
             });
     },
         deleteReview: function(req, res) {
-            res.render('loginForReviewDelete', {deleteId: req.params.id});
+            res.render('loginForReviewDelete', {
+                        deleteId: req.params.id
+                })
         },
         confirmDelete: function (req, res) {
             moduloLogin.validar(req.body.email, req.body.password)
-            .then(resultado => {
+            .then((resultado) => {
                 if (resultado != null) {
                     db.Review.destroy({
                         where: {
