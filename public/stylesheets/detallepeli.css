@@ -23,6 +23,9 @@
     font-size: 1rem;
     color: rgb(146, 163, 163);
   }
+  a {
+    color: rgb(146, 163, 163);
+  }
   div.formReview {
     margin-top: 0%;
   }
