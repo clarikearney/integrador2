@@ -105,6 +105,7 @@ footer {
     background: rgb(187, 165, 158);
     box-shadow: -2px -2px 5px gray, 2px 2px 5px gray;
     height: 9%;
+    display: block;
 }
 
 footer nav.copyright img.img-poweredby{
