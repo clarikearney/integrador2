@@ -11,7 +11,7 @@
     <section class="listadoUsers">
         <% if (resultado.length >0)  { %> 
                     <div class="titleReviews">
-                        <ul>
+                        <ul class="user-email">
                             <h2> <%= resultado[0].oneUser.name %>'s reviews</h2>
                             <p>Your email: <%= resultado[0].oneUser.email %>  </p>
                         </ul>
@@ -19,7 +19,7 @@
                     </div>
                     <% for (let i=0; i< resultado.length; i++){ %>
                     <div class="myReviews">
-                        <ul>
+                        <ul class="edit-delete-movie">
                             <li>
                                 <div class="uk-card-badge uk-label uk-margin-bottom">
                                     <%= resultado[i].puntaje %> 
