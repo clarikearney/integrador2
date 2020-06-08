@@ -107,7 +107,7 @@ window.addEventListener("load", function() {
         // ¿Cómo obtengo la cantidad de elementos de un array? .length
         // Si  queremos obtener toodas la informacion de lo que el usuario seleccione (ya sea una palabra en el buscador, un género, la información del detalle de una película, las películas de mayor puntaje, etc.) tenemos que hacer .length
         for (var i=0; i < arrayDeGeneros.length; i++){
-              li += '<a href="generos?id=' + arrayDeGeneros[i].id + '">'
+              li += '<a href="/movies/generos?id=' + arrayDeGeneros[i].id + '">'
               li += arrayDeGeneros[i].name
               // CONDICIONALES: Generar condiciones para ejecutar código
               // if(condición lógica)
@@ -235,7 +235,7 @@ fetch("https://api.themoviedb.org/3/movie/" + idDePelicula + "/recommendations?a
       // += agrega un valor a la variable
 
       li += '<li>'
-      li += '<a href="detalle?idDePelicula=' + id +'"'
+      li += '<a href="/movies/detalle?idDePelicula=' + id +'"'
       li += '<h2>' + title + '</h2>'
       li += '<img src='+ imgPath + imagenpelicula+ '>'
       li += '</a>'
