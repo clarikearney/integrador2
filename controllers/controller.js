@@ -40,8 +40,7 @@ moduloLogin.validar(req.body.email, req.body.password)
             puntaje: req.body.puntaje,
         })
         .then(function() {
-            // res.redirect('/movies/detalle/?idDePelicula=' + req.body.pelicula_id);
-            res.redirect('/movies/detalle')
+            res.redirect('/movies/detalle/?idDePelicula=' + req.body.pelicula_id);
         })
      }  else {
             res.send('Error')
