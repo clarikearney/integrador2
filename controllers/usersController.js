@@ -1,7 +1,6 @@
 let db = require("../database/models");
 let op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
-let controller = require('./controller');
 let moduloLogin = require('../modulo-login');
 
 let usersController = {
