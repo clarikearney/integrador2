@@ -35,3 +35,6 @@ div.myReviews ul.edit-delete-movie li {
   hr{
       color: black;
   } 
+  div ul li p {
+      color: rgb(240, 229, 225);
+  }

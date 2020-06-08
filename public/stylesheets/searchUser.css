@@ -1,0 +1,16 @@
+/* <section>
+<div class="uk-modal-body" uk-overflow-auto>
+    <form action="/users/searchUsersResult" class="uk-background-secondary uk-padding uk-padding-large" method="get">
+      <div class="uk-margin-large-top">
+        <div class="uk-inline">
+          <span class="uk-form-icon" uk-icon="icon: search"></span>
+          <input id="text" class="searchUser uk-input" type="searchUser" name="searchUser" placeholder="Search users">
+        </div>
+      </div>
+    </form>
+  </div>
+</section> */
+
+form.uk-background-secondary {
+    margin-top: 8%;
+}

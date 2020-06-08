@@ -19,7 +19,7 @@
                     </div>
                     <% for (let i=0; i< resultado.length; i++){ %>
                     <div class="myReviews">
-                        <ul class="edit-delete-movie">
+                        <ul class="edit-delete-movie uk-background-secondary uk-padding uk-padding-small">
                             <li>
                                 <div class="uk-card-badge uk-label uk-margin-bottom">
                                     <%= resultado[i].puntaje %> 
@@ -40,9 +40,7 @@
                                 <a class="uk-icon-button" uk-icon="play-circle" uk_toggle href="/movies/detalle?idDePelicula= <%= resultado[i].pelicula_id %>"> </a>
                                 <p>Go to movie</p>
                             </li>
-                            <li>
                                 <hr>
-                            </li>
                         </ul>
                     </div>
                 <% } %>    
