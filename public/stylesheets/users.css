@@ -1,0 +1,7 @@
+*{box-sizing: border-box;}
+/* box-sizing: propiedad CSS para cambiar el modelo de caja por defecto de los navegadores. */
+/* border-box: hacemos que el ancho especificado sea equivalente al ancho total */
+
+html {
+ background-color: rgb(240, 229, 225);
+}

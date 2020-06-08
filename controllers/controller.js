@@ -24,7 +24,7 @@ detail: function (req, res) {
     })
     .then((reviews)=> {
         res.render('detallePeli', {
-            pelicula_id: req.params.idDePelicula,
+            pelicula_id: req.query.idDePelicula,
             reviews: reviews});
     })
 },
@@ -34,7 +34,7 @@ moduloLogin.validar(req.body.email, req.body.password)
 .then(function(usuario) {
     if(usuario != undefined) {
         db.Review.create({
-            pelicula_id: req.params.idDePelicula,
+            pelicula_id: req.body.pelicula_id,
             usuario_id: usuario.id,
             resena: req.body.resena,
             puntaje: req.body.puntaje,
